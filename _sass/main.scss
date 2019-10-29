@@ -26,6 +26,7 @@ $primary-invert: $pink-invert;
 // 4. Import the rest of Bulma
 */
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
 @import "../node_modules/bulma/bulma";
 
 .bm--card-equal-height {
@@ -36,4 +37,8 @@ $primary-invert: $pink-invert;
     .fa, .fas {
         padding-top: 7rem;
     }
+}
+
+.login-container {
+    
 }

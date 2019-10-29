@@ -18,6 +18,7 @@ $primary-invert: $pink-invert;
 
 // 4. Import the rest of Bulma
 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
 /*! bulma.io v0.7.5 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {

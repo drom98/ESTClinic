@@ -6982,3 +6982,8 @@ label.panel-block {
 
 .card-image .fa, .card-image .fas {
   padding-top: 7rem; }
+
+#login-container {
+  height: calc(100vh - 52px);
+  justify-content: center;
+  align-items: center; }

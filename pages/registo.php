@@ -20,8 +20,8 @@
         </a>
       </div>
         <div class="navbar-end">
-          <a href="pages/login.php" class="navbar-item">Início</a>
-          <a href="registo.php" class="navbar-item">Registo</a>
+          <a href="/pages/login.html" class="navbar-item">Início</a>
+          <a href="/pages/registo.html" class="navbar-item">Registo</a>
         </div>
     </div>
     </nav>
@@ -31,14 +31,24 @@
                 <div class="column is-half">
                     <div class="card">
                       <div class="card-content">
-                        <h1 class="title has-text-info is-4 has-text-centered">Iniciar sessão</h1>
-                        <h2 class="subtitle is-6 has-text-centered">Entre com a sua conta.</h2>
+                        <h1 class="title has-text-info is-4 has-text-centered">Registe-se</h1>
+                        <h2 class="subtitle is-6 has-text-centered">Registe a sua conta.</h2>
                         <div class="field">
                           <label class="label">Nome:</label>
                           <div class="control has-icons-left">
                             <input type="text" class="input is-info" placeholder="Insira o seu nome...">
                             <span class="icon is-small is-left">
                               <i class="fas fa-user"></i>
+                            </span>
+                          </div>
+                          <p class="help is-danger is-hidden">#</p>
+                        </div>
+                        <div class="field">
+                          <label class="label">Email:</label>
+                          <div class="control has-icons-left">
+                            <input type="text" class="input is-info" placeholder="Insira o seu email...">
+                            <span class="icon is-small is-left">
+                              <i class="fas fa-envelope"></i>
                             </span>
                           </div>
                           <p class="help is-danger is-hidden">#</p>

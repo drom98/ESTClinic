@@ -19,10 +19,11 @@
                       <div class="card-content">
                         <h1 class="title has-text-info is-4 has-text-centered">Iniciar sessão</h1>
                         <h2 class="subtitle is-6 has-text-centered">Entre com a sua conta.</h2>
+                        <form action="../php/login_registo/login.php" method="POST">
                         <div class="field">
                           <label class="label">Nome:</label>
                           <div class="control has-icons-left">
-                            <input type="text" class="input is-info" placeholder="Insira o seu nome...">
+                            <input name="nome" type="text" class="input is-info" placeholder="Insira o seu nome...">
                             <span class="icon is-small is-left">
                               <i class="fas fa-user"></i>
                             </span>
@@ -32,7 +33,7 @@
                         <div class="field">
                             <label class="label">Password:</label>
                               <div class="control has-icons-left">
-                                <input type="password" class="input is-info" placeholder="Insira a sua password...">
+                                <input name="password" type="password" class="input is-info" placeholder="Insira a sua password...">
                                 <span class="icon is-small is-left">
                                   <i class="fas fa-lock"></i>
                                 </span>
@@ -42,9 +43,10 @@
 
                         <div class="field is-grouped">
                           <div class="control">
-                            <button class="button is-info">Entrar</button>
+                            <input type="submit" class="button is-info" value="Entrar">
                           </div>
                         </div>
+                        </form>
                       </div>
                     </div>
                 </div>

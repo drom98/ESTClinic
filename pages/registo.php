@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/main.css">
-  <title>ESTClinic - Iniciar sessão</title>
+  <title>ESTClinic - Registar</title>
 </head>
 <body class="has-navbar-fixed-top">
   <nav class="navbar is-info is-fixed-top" role="navigation">
@@ -20,8 +20,8 @@
         </a>
       </div>
         <div class="navbar-end">
-          <a href="/pages/login.html" class="navbar-item">Início</a>
-          <a href="/pages/registo.html" class="navbar-item">Registo</a>
+          <a href="../index.html" class="navbar-item">Início</a>
+          <a href="login.php" class="navbar-item">Login</a>
         </div>
     </div>
     </nav>

@@ -20,7 +20,7 @@
         </a>
       </div>
         <div class="navbar-end">
-          <a href="pages/login.php" class="navbar-item">Início</a>
+          <a href="../index.html" class="navbar-item">Início</a>
           <a href="registo.php" class="navbar-item">Registo</a>
         </div>
     </div>

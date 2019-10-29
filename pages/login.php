@@ -8,23 +8,9 @@
   <title>ESTClinic - Iniciar sessão</title>
 </head>
 <body class="has-navbar-fixed-top">
-  <nav class="navbar is-info is-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a href="#" class="navbar-item">ESTClinic</a>
-        <!--Adicionar class 'is-active' para mostrar X-->
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-        <div class="navbar-end">
-          <a href="../index.html" class="navbar-item">Início</a>
-          <a href="registo.php" class="navbar-item">Registo</a>
-        </div>
-    </div>
-    </nav>
+  <?php 
+  require_once '../php/parts/navbar.html';
+  ?>
     <section class="section">
         <div class="container" id="login-container">
             <div class="columns is-centered">

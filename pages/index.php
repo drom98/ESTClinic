@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ESTClinic</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
   </head>
   <body class="has-navbar-fixed-top">
     <?php 
-    require_once 'php/parts/navbar.php';
+    require_once '../php/parts/navbar.html';
     ?>
     <section class="hero is-fullheight-with-navbar" id="main">
       <div class="hero-body">
@@ -27,7 +27,7 @@
             </div>
             <div class="column is-half is-desktop is-vcentered">
               <figure class="image">
-                <img src="assets/images/index.svg" alt="">
+                <img src="../assets/images/index.svg" alt="">
               </figure>
             </div>
           </div>

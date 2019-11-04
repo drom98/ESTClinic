@@ -52,7 +52,7 @@
 
                         <div class="field is-grouped">
                           <div class="control">
-                            <button class="button is-info">Entrar</button>
+                            <button class="button is-info">Registar</button>
                           </div>
                         </div>
                       </div>

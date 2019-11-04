@@ -23,7 +23,7 @@
                         <div class="field">
                           <label class="label">Nome:</label>
                           <div class="control has-icons-left">
-                            <input name="nome" type="text" class="input is-info" placeholder="Insira o seu nome...">
+                            <input name="nome" type="text" class="input is-info" placeholder="Insira o seu nome..." required>
                             <span class="icon is-small is-left">
                               <i class="fas fa-user"></i>
                             </span>
@@ -33,12 +33,12 @@
                         <div class="field">
                             <label class="label">Password:</label>
                               <div class="control has-icons-left">
-                                <input name="password" type="password" class="input is-info" placeholder="Insira a sua password...">
+                                <input name="password" type="password" class="input is-info" placeholder="Insira a sua password..." required>
                                 <span class="icon is-small is-left">
                                   <i class="fas fa-lock"></i>
                                 </span>
                               </div>
-                              <p class="help is-danger is-hidden">#</p>
+                              <p class="help is-danger is-hidden">Password inválida.</p>
                         </div>
 
                         <div class="field is-grouped">

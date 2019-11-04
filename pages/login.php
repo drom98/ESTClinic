@@ -1,3 +1,8 @@
+<?php 
+if(isset($_GET["erro"])) {
+  echo '<script src="../lib/login.js"></script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +33,7 @@
                               <i class="fas fa-user"></i>
                             </span>
                           </div>
-                          <p class="help is-danger is-hidden">#</p>
+                          <p class="help is-danger is-hidden"></p>
                         </div>
                         <div class="field">
                             <label class="label">Password:</label>

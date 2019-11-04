@@ -7,7 +7,7 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
 	$password = md5(mysqli_real_escape_string($conn, $_POST['password']));
 
 	$sql = "SELECT * FROM utilizador WHERE login = '$nome' AND password = '$password' AND tipoUtilizador != 6";
-	$retval = mysqli_query( $conn, $sql );
+	$retval = mysqli_query($conn, $sql);
 	if(! $retval ){
 		die('Could not get data: ' . mysqli_error($conn));
 	}
@@ -18,19 +18,15 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
     defineSessionVariables($row);
     verificarTipoUtilizador($row);
   } else {
-    echo "est+a mal";
+    header("Location: ../../pages/login.php?erro=erro");
   }
 }
 
 //Funções
-function query() {
-
-}
-
 function defineSessionVariables($row) {
   $_SESSION["idUser"] = $row["idUtilizador"];
   $_SESSION["login"] = $row["login"];
-  $_SESSION["utilizador"] = $nome;
+  $_SESSION["utilizador"] = $row["nome"];
   $_SESSION["email"] = $row["email"];
   $_SESSION["password"] = $row["password"];
   $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];

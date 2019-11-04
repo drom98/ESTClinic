@@ -9,35 +9,44 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
 	$sql = "SELECT * FROM utilizador WHERE login = '$nome' AND password = '$password' AND tipoUtilizador != 6";
 	$retval = mysqli_query( $conn, $sql );
 	if(! $retval ){
-		die('Could not get data: ' . mysqli_error($conn));// se não funcionar dá erro
+		die('Could not get data: ' . mysqli_error($conn));
 	}
   $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
 
   if($row != NULL) {
-
     session_start();
-
-    $_SESSION["idUser"] = $row["idUtilizador"];
-    $_SESSION["login"] = $row["login"];
-    $_SESSION["utilizador"] = $nome;
-    $_SESSION["email"] = $row["email"];
-    $_SESSION["password"] = $row["password"];
-    $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
-
-    if ($row['tipoUtilizador'] == 1){
-      header("Location: ../../pages/admin.php");
-    } else if ($row['tipoUtilizador'] == 2){
-      header("Location: ../../pages/medico.php");
-    } else if ($row['tipoUtilizador'] == 3){
-      header("Location: ../../pages/enfermeiro.php");
-    } else if ($row['tipoUtilizador'] == 4){
-      header("Location: ../../pages/utente_nv.php");
-    } else if ($row['tipoUtilizador'] == 5){
-      header("Location: ../../pages/utente.php");
-    }
-
+    defineSessionVariables($row);
+    verificarTipoUtilizador($row);
   } else {
     echo "est+a mal";
+  }
+}
+
+//Funções
+function query() {
+
+}
+
+function defineSessionVariables($row) {
+  $_SESSION["idUser"] = $row["idUtilizador"];
+  $_SESSION["login"] = $row["login"];
+  $_SESSION["utilizador"] = $nome;
+  $_SESSION["email"] = $row["email"];
+  $_SESSION["password"] = $row["password"];
+  $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
+}
+
+function verificarTipoUtilizador($row) {
+  if ($row['tipoUtilizador'] == 1){
+    header("Location: ../../pages/admin.php");
+  } else if ($row['tipoUtilizador'] == 2){
+    header("Location: ../../pages/medico.php");
+  } else if ($row['tipoUtilizador'] == 3){
+    header("Location: ../../pages/enfermeiro.php");
+  } else if ($row['tipoUtilizador'] == 4){
+    header("Location: ../../pages/utente_nv.php");
+  } else if ($row['tipoUtilizador'] == 5){
+    header("Location: ../../pages/utente.php");
   }
 }
 

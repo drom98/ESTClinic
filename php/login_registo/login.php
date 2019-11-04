@@ -1,7 +1,5 @@
 <?php 
 
-session_start();
-
 include '../basedados.h';
 
 if(isset($_POST["nome"]) && isset($_POST["password"])) {
@@ -16,6 +14,16 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
   $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
 
   if($row != NULL) {
+
+    session_start();
+
+    $_SESSION["idUser"] = $row["idUtilizador"];
+    $_SESSION["login"] = $row["login"];
+    $_SESSION["utilizador"] = $nome;
+    $_SESSION["email"] = $row["email"];
+    $_SESSION["password"] = $row["password"];
+    $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
+
     if ($row['tipoUtilizador'] == 1){
       header("Location: ../../pages/admin.php");
     } else if ($row['tipoUtilizador'] == 2){

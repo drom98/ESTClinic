@@ -1,3 +1,10 @@
+<?php 
+if(isset($_GET["erro"])) {
+  require_once '../php/utils.php';
+  echo "<script type='text/javascript' src='".JS."login.js'></script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +26,7 @@
                     <div class="card-content">
                       <h1 class="title has-text-info is-4 has-text-centered">Registe-se</h1>
                       <h2 class="subtitle is-6 has-text-centered">Registe a sua conta.</h2>
-                      <form action="../php/login_registo/login.php" method="POST">
+                      <form action="../php/login_registo/registo.php" method="POST">
                         <div class="field">
                           <label class="label">Nome de utilizador:</label>
                           <div class="control has-icons-left">

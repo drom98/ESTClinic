@@ -2,6 +2,6 @@
 
 session_start();
 
-echo $_SESSION["utilizador"];
+echo $_SESSION["idUser"];
 
 ?>

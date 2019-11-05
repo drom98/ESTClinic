@@ -4,29 +4,51 @@ include '../basedados.h';
 
 if(isset($_POST["nome"]) && isset($_POST["password"])) {
   $nome = mysqli_real_escape_string($conn, $_POST['nome']);
-	$password = md5(mysqli_real_escape_string($conn, $_POST['password']));
-
-	$sql = "SELECT * FROM utilizador WHERE login = '$nome' AND password = '$password' AND tipoUtilizador != 6";
-	$retval = mysqli_query($conn, $sql);
-	if(! $retval ){
-		die('Could not get data: ' . mysqli_error($conn));
-	}
-  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-
-  if($row != NULL) {
-    session_start();
-    defineSessionVariables($row);
-    verificarTipoUtilizador($row);
+  $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
+  
+  if(queryNomeUser($conn, $nome)) {
+    if(queryUserPassword($conn, $nome, $password)) {
+      $row = queryUserPassword($conn, $nome, $password);
+      defineSessionVariables($row);
+      verificarTipoUtilizador($row);
+    } else {
+      //Password errada
+      header("Location: ../../pages/login.php?erro=password");
+    }
   } else {
-    header("Location: ../../pages/login.php?erro=erro");
+    //Username não existe
+    header("Location: ../../pages/login.php?erro=nome");
   }
 }
 
 //Funções
+function queryNomeUser($conn, $nome) {
+  $sql = "SELECT nomeUtilizador FROM utilizador WHERE nomeUtilizador = '$nome'";
+  $retval = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+  if($row == NULL) {
+    return false;
+  } else {
+    return $row;
+  }
+}
+
+function queryUserPassword($conn, $nome, $password) {
+  $sql = "SELECT * FROM utilizador WHERE nomeUtilizador = '$nome' AND password = '$password'";
+  $retval = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+  if($row == NULL) {
+    return false;
+  } else {
+    return $row;
+  }
+}
+
 function defineSessionVariables($row) {
+  session_start();
   $_SESSION["idUser"] = $row["idUtilizador"];
-  $_SESSION["login"] = $row["login"];
-  $_SESSION["utilizador"] = $row["nome"];
+  $_SESSION["nomeUtilizador"] = $row["nomeUtilizador"];
+  $_SESSION["nome"] = $row["nome"];
   $_SESSION["email"] = $row["email"];
   $_SESSION["password"] = $row["password"];
   $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
@@ -46,4 +68,22 @@ function verificarTipoUtilizador($row) {
   }
 }
 
+
+
+  /*
+	$sql = "SELECT * FROM utilizador WHERE nomeUtilizador = '$nome' AND password = '$password' AND tipoUtilizador != 6";
+	$retval = mysqli_query($conn, $sql);
+	if(! $retval ){
+		die('Could not get data: ' . mysqli_error($conn));
+	}
+  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+
+  if($row != NULL) {
+    session_start();
+    defineSessionVariables($row);
+    verificarTipoUtilizador($row);
+  } else {
+    header("Location: ../../pages/login.php?erro");
+  }
+  */
 ?>

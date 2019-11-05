@@ -67,23 +67,4 @@ function verificarTipoUtilizador($row) {
     header("Location: ../../pages/utente.php");
   }
 }
-
-
-
-  /*
-	$sql = "SELECT * FROM utilizador WHERE nomeUtilizador = '$nome' AND password = '$password' AND tipoUtilizador != 6";
-	$retval = mysqli_query($conn, $sql);
-	if(! $retval ){
-		die('Could not get data: ' . mysqli_error($conn));
-	}
-  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-
-  if($row != NULL) {
-    session_start();
-    defineSessionVariables($row);
-    verificarTipoUtilizador($row);
-  } else {
-    header("Location: ../../pages/login.php?erro");
-  }
-  */
 ?>

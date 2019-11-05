@@ -1,6 +1,7 @@
 <?php 
 if(isset($_GET["erro"])) {
-  echo '<script src="../lib/login.js"></script>';
+  require_once '../php/utils.php';
+  echo "<script type='text/javascript' src='".JS."login.js'></script>";
 }
 ?>
 <!DOCTYPE html>
@@ -28,22 +29,22 @@ if(isset($_GET["erro"])) {
                         <div class="field">
                           <label class="label">Nome:</label>
                           <div class="control has-icons-left">
-                            <input name="nome" type="text" class="input is-info" placeholder="Insira o seu nome..." required>
+                            <input name="nome" type="text" class="input" placeholder="Insira o seu nome..." required>
                             <span class="icon is-small is-left">
                               <i class="fas fa-user"></i>
                             </span>
                           </div>
-                          <p class="help is-danger is-hidden"></p>
+                          <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
                         </div>
                         <div class="field">
                             <label class="label">Password:</label>
                               <div class="control has-icons-left">
-                                <input name="password" type="password" class="input is-info" placeholder="Insira a sua password..." required>
+                                <input name="password" type="password" class="input" placeholder="Insira a sua password..." required>
                                 <span class="icon is-small is-left">
                                   <i class="fas fa-lock"></i>
                                 </span>
                               </div>
-                              <p class="help is-danger is-hidden">Password inválida.</p>
+                              <p id="password" class="help is-danger is-hidden">Password errada.</p>
                         </div>
 
                         <div class="field is-grouped">

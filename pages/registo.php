@@ -15,46 +15,59 @@
         <div class="container" id="login-container">
             <div class="columns is-centered">
                 <div class="column is-half">
-                    <div class="card">
-                      <div class="card-content">
-                        <h1 class="title has-text-info is-4 has-text-centered">Registe-se</h1>
-                        <h2 class="subtitle is-6 has-text-centered">Registe a sua conta.</h2>
+                  <div class="card">
+                    <div class="card-content">
+                      <h1 class="title has-text-info is-4 has-text-centered">Registe-se</h1>
+                      <h2 class="subtitle is-6 has-text-centered">Registe a sua conta.</h2>
+                      <form action="../php/login_registo/login.php" method="POST">
                         <div class="field">
-                          <label class="label">Nome:</label>
+                          <label class="label">Nome de utilizador:</label>
                           <div class="control has-icons-left">
-                            <input type="text" class="input is-info" placeholder="Insira o seu nome...">
+                            <input name="userName" type="text" class="input" placeholder="Insira o seu nome de login..." required>
                             <span class="icon is-small is-left">
                               <i class="fas fa-user"></i>
                             </span>
                           </div>
-                          <p class="help is-danger is-hidden">#</p>
+                          <p id="nome" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
                         </div>
+
+                        <div class="field">
+                          <label class="label">Nome:</label>
+                          <div class="control has-icons-left">
+                            <input name="nome" type="text" class="input" placeholder="Insira o seu nome..." required>
+                            <span class="icon is-small is-left">
+                              <i class="fas fa-user"></i>
+                            </span>
+                          </div>
+                        </div>
+
                         <div class="field">
                           <label class="label">Email:</label>
                           <div class="control has-icons-left">
-                            <input type="text" class="input is-info" placeholder="Insira o seu email...">
+                            <input name="email" type="email" class="input" placeholder="Insira o seu email..." required>
                             <span class="icon is-small is-left">
                               <i class="fas fa-envelope"></i>
                             </span>
                           </div>
-                          <p class="help is-danger is-hidden">#</p>
                         </div>
+
                         <div class="field">
-                            <label class="label">Password:</label>
-                              <div class="control has-icons-left">
-                                <input type="password" class="input is-info" placeholder="Insira a sua password...">
-                                <span class="icon is-small is-left">
-                                  <i class="fas fa-lock"></i>
-                                </span>
-                              </div>
-                              <p class="help is-danger is-hidden">#</p>
+                          <label class="label">Password:</label>
+                            <div class="control has-icons-left">
+                              <input name="password" type="password" class="input" placeholder="Insira a sua password..." required>
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                              </span>
+                            </div>
+                            <p id="password" class="help is-danger is-hidden">Password errada.</p>
                         </div>
 
                         <div class="field is-grouped">
                           <div class="control">
-                            <button class="button is-info">Registar</button>
+                            <input type="submit" class="button is-info" value="Registar">
                           </div>
                         </div>
+                        </form>
                       </div>
                     </div>
                 </div>

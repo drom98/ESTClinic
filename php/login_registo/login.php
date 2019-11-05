@@ -1,6 +1,8 @@
 <?php 
 
 include '../basedados.h';
+include '../utils.php';
+include($_SERVER['DOCUMENT_ROOT'].PHP.'login_registo/querys.php');
 
 if(isset($_POST["nome"]) && isset($_POST["password"])) {
   $nome = mysqli_real_escape_string($conn, $_POST['nome']);
@@ -22,28 +24,6 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
 }
 
 //Funções
-function queryNomeUser($conn, $nome) {
-  $sql = "SELECT nomeUtilizador FROM utilizador WHERE nomeUtilizador = '$nome'";
-  $retval = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-  if($row == NULL) {
-    return false;
-  } else {
-    return $row;
-  }
-}
-
-function queryUserPassword($conn, $nome, $password) {
-  $sql = "SELECT * FROM utilizador WHERE nomeUtilizador = '$nome' AND password = '$password'";
-  $retval = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-  if($row == NULL) {
-    return false;
-  } else {
-    return $row;
-  }
-}
-
 function defineSessionVariables($row) {
   session_start();
   $_SESSION["idUser"] = $row["idUtilizador"];

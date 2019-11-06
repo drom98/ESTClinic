@@ -30,14 +30,15 @@ if(verificarSessao()) {
     </div>
   </div>
   
-  <div class="columns">
+  <div class="columns is-centered is-vcentered">
     <div class="column is-one-quarter">
       <div class="section">
         <?php include_once '../parts/menu.html'; ?>
       </div>
     </div>
     <div class="column">
-      <div class="section">
+      <div class="container is-fluid">
+        <div class="section">
         <?php 
           if(isset($_GET['tab'])) {
             require_once 'tabSwitch.php';
@@ -45,6 +46,7 @@ if(verificarSessao()) {
             tabSwitch($tab);
           }
         ?>
+        </div>
       </div>
     </div>
   </div>

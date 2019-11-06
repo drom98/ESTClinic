@@ -11,5 +11,4 @@
 	}
 	// Selecionamos nossa base de dados MySQL
 	mysqli_select_db($conn, NOME_BD);
-
 ?>

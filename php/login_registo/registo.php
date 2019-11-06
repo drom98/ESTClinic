@@ -12,13 +12,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if(!queryNomeUser($conn, $nome)) {
       if (registarUser($userName, $nome, $email, $password, '4', $conn)){
-        // header("Location ../../pages/registoconcluido.php
+        header("Location: ../../pages/registoConcluido.php");
        } else {
         // popup erro ao resgistar
         echo "Erro: " . mysqli_error($conn);
       }
     } else {
-      //Username não existe
+      //Username já existe
       header("Location: ../../pages/registo.php?erro=nome");
     }
 }

@@ -7,6 +7,7 @@ include_once '../../php/utils.php';
 if(verificarSessao()) {
   header('Location: '.PAGES.'login.php?erro=permissao');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +38,13 @@ if(verificarSessao()) {
     </div>
     <div class="column">
       <div class="section">
-        <h1 class="title">Teste</h1>
+        <?php 
+          if(isset($_GET['tab'])) {
+            require_once 'tabSwitch.php';
+            $tab = $_GET['tab'];
+            tabSwitch($tab);
+          }
+        ?>
       </div>
     </div>
   </div>

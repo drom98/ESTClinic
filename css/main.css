@@ -6987,3 +6987,6 @@ label.panel-block {
   height: calc(100vh - 52px);
   justify-content: center;
   align-items: center; }
+
+.is-active {
+  background-color: #209cee !important; }

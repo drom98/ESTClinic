@@ -25,6 +25,9 @@ if(isset($_GET["erro"])) {
                       <div class="card-content">
                         <h1 class="title has-text-info is-4 has-text-centered">Iniciar sessão</h1>
                         <h2 class="subtitle is-6 has-text-centered">Entre com a sua conta.</h2>
+                        <?php 
+                        require_once 'parts/message.html';
+                        ?>
                         <form action="../php/login_registo/login.php" method="POST">
                         <div class="field">
                           <label class="label">Nome:</label>
@@ -54,9 +57,6 @@ if(isset($_GET["erro"])) {
                         </div>
                         </form>
                       </div>
-                      <?php 
-                      require_once 'parts/message.html';
-                      ?>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ if(isset($_GET["erro"])) {
 </head>
 <body class="has-navbar-fixed-top">
   <?php 
-  require_once '../php/parts/navbar.html';
+  require_once 'parts/navbar.html';
   ?>
     <section class="section">
         <div class="container" id="login-container">

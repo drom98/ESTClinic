@@ -15,7 +15,7 @@ if(isset($_GET["erro"])) {
 </head>
 <body class="has-navbar-fixed-top">
   <?php 
-  require_once '../php/parts/navbar.html';
+  require_once 'parts/navbar.html';
   ?>
     <section class="section">
         <div class="container" id="login-container">
@@ -55,7 +55,7 @@ if(isset($_GET["erro"])) {
                         </form>
                       </div>
                       <?php 
-                      require_once '../php/parts/message.html';
+                      require_once 'parts/message.html';
                       ?>
                     </div>
                 </div>

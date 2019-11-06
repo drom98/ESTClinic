@@ -9,6 +9,7 @@
   </head>
   <body class="has-navbar-fixed-top">
     <?php 
+    require_once '../php/utils.php';
     require_once '../php/parts/navbar.html';
     ?>
     <section class="hero is-fullheight-with-navbar" id="main">
@@ -22,12 +23,12 @@
               <h2 class="subtitle is-5">
                   Entre com a sua conta ou registe-se para fazer a sua marcação.
               </h2>
-              <a class="button is-info" href="pages/login.php">Iniciar sessão</a>
+              <a class="button is-info" href=<?php echo(PAGES.'login.php'); ?>>Iniciar sessão</a>
               <a class="button is-outlined is-info" href="#" style="margin-left: 1rem;">Mais informações</a>
             </div>
             <div class="column is-half is-desktop is-vcentered">
               <figure class="image">
-                <img src="../assets/images/index.svg" alt="">
+                <img src=<?php echo(ASSETS.'/images/index.svg'); ?> alt="">
               </figure>
             </div>
           </div>

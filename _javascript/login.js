@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'userName':
         mostrarErro(value);
         break;
+      case 'permissao':
+        erroPermissao(value);
+      default: 
+        break;
     }
 
     esconderErro(value);
@@ -34,4 +38,10 @@ let esconderErro = (erro) => {
     textEl.classList.add('is-hidden');
     inputEl.classList.remove('is-danger');
   });
+}
+
+let erroPermissao = (erro) => {
+  const messageEl = document.querySelector(`#${erro}`);
+
+  messageEl.classList.remove('is-hidden');
 }

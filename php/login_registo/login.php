@@ -1,7 +1,7 @@
 <?php 
 
-include '../basedados.h';
-include '../utils.php';
+include_once '../basedados.h';
+include_once '../utils.php';
 include($_SERVER['DOCUMENT_ROOT'].PHP.'login_registo/querys.php');
 
 if(isset($_POST["nome"]) && isset($_POST["password"])) {

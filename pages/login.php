@@ -54,6 +54,9 @@ if(isset($_GET["erro"])) {
                         </div>
                         </form>
                       </div>
+                      <?php 
+                      require_once '../php/parts/message.html';
+                      ?>
                     </div>
                 </div>
             </div>

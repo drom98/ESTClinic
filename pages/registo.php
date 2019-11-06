@@ -35,7 +35,7 @@ if(isset($_GET["erro"])) {
                               <i class="fas fa-user"></i>
                             </span>
                           </div>
-                          <p id="nome" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
+                          <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
                         </div>
 
                         <div class="field">

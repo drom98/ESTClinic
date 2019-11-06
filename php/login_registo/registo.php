@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     } else {
       //Username já existe
-      header("Location: ../../pages/registo.php?erro=nome");
+      header("Location: ../../pages/registo.php?erro=userName");
     }
 }
 

@@ -36,7 +36,7 @@ function defineSessionVariables($row) {
 
 function verificarTipoUtilizador($row) {
   if ($row['tipoUtilizador'] == 1){
-    header("Location: ../../pages/admin.php");
+    header("Location: ../../pages/admin/admin.php");
   } else if ($row['tipoUtilizador'] == 2){
     header("Location: ../../pages/medico.php");
   } else if ($row['tipoUtilizador'] == 3){

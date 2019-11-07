@@ -42,7 +42,7 @@ function verificarTipoUtilizador($row) {
   } else if ($row['tipoUtilizador'] == 3){
     header("Location: ../../pages/enfermeiro.php");
   } else if ($row['tipoUtilizador'] == 4){
-    header("Location: ../../pages/utente_nv.php");
+    header("Location: ../../pages/login.php?erro=aprovar");
   } else if ($row['tipoUtilizador'] == 5){
     header("Location: ../../pages/utente.php");
   }

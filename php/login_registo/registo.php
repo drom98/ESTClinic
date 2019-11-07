@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if(!queryNomeUser($conn, $nome)) {
       if (registarUser($userName, $nome, $email, $password, '4', $conn)){
-        header("Location: ../../pages/registoConcluido.php");
+        header("Location: ../../pages/login.php?erro=aprovar");
        } else {
         // popup erro ao resgistar
         echo "Erro: " . mysqli_error($conn);

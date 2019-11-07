@@ -15,14 +15,14 @@ function queryDB($conn) {
     <td>".$row['nome']."</td>
     <td>".$row['email']."</td>
     <td>".$row['tipoUtilizador']."</td>
-    <td>".mostrarIcons()."</td>
+    <td>".mostrarIcons($row['idUtilizador'])."</td>
     </tr>";
   }
 }
 
-function mostrarIcons() { 
+function mostrarIcons($userID) { 
   return '
-  <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser">
+  <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
     <span class="icon">
       <i class="fas fa-user-edit"></i>
     </span>

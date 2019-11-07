@@ -23,6 +23,7 @@ if(file_exists('../php/utils.php')) {
 	  <div class="navbar-end">
 			<?php 
 			if(!verificarSessao()) { ?>
+				<a href=<?php echo(PAGES.'admin/admin.php') ?> class="navbar-item"><span class="icon" style="margin-right: 3px"><i class="fas fa-user"></i></span><?php echo($_SESSION['nome']) ?></a>
 				<a href=<?php echo(PHP.'login_registo/logout.php') ?> class="navbar-item">Sair</a> <?php
 			} else { ?>
 				<a href=<?php echo(PAGES.'login.php') ?> class="navbar-item">Login</a>

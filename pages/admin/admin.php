@@ -23,6 +23,7 @@ if(verificarSessao()) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
+<?php include_once '../parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
   <div class="hero is-light">
     <div class="hero-body">
@@ -53,5 +54,6 @@ if(verificarSessao()) {
       </div>
     </div>
   </div>
+  <script src="../../lib/admin.js"></script>
 </body>
 </html>

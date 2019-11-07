@@ -49,3 +49,7 @@ $primary-invert: $pink-invert;
 .is-active {
     background-color: $info !important;
 }
+
+.modal.is-active {
+    background: unset !important; 
+}

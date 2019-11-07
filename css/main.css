@@ -7135,3 +7135,6 @@ label.panel-block {
 
 .is-active {
   background-color: #3298dc !important; }
+
+.modal.is-active {
+  background: unset !important; }

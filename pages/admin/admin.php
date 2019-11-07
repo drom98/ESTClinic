@@ -1,6 +1,9 @@
 <?php 
 
-session_start();
+if(!isset($_SESSION)) {
+  session_start();
+}
+
 include_once '../../php/utils.php';
 
 //True = sem sessão
@@ -20,12 +23,12 @@ if(verificarSessao()) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
-  <?php include_once '../parts/navbar.html'; ?>
+  <?php include_once '../parts/navbar.php'; ?>
   <div class="hero is-light">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">Administrador</h1>
-        <h1 class="subtitle">Página de gestão de utilizadores, marcações e escalas de serviço.</h1>
+        <h1 class="title is-3">Administrador</h1>
+        <h1 class="subtitle is-5">Página de gestão de utilizadores, marcações e escalas de serviço.</h1>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
   <body class="has-navbar-fixed-top">
     <?php 
     require_once '../php/utils.php';
-    require_once 'parts/navbar.html';
+    require_once 'parts/navbar.php';
     ?>
     <section class="hero is-fullheight-with-navbar" id="main">
       <div class="hero-body">

@@ -6,7 +6,7 @@ function tabSwitch($tab) {
       require_once 'utilizadores.php';
       break;
     case 'usersPorAprovar':
-      echo $tab;
+      require_once 'users-por-aprovar.php';
       break;
     default:
       break;

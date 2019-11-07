@@ -15,8 +15,25 @@ function queryDB($conn) {
     <td>".$row['nome']."</td>
     <td>".$row['email']."</td>
     <td>".$row['tipoUtilizador']."</td>
+    <td>".mostrarIcons()."</td>
     </tr>";
   }
+}
+
+function mostrarIcons() { 
+  return '
+  <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser">
+    <span class="icon">
+      <i class="fas fa-user-edit"></i>
+    </span>
+    <span>Editar dados</span>
+  </button>
+  <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser">
+    <span class="icon">
+      <i class="fas fa-trash"></i>
+    </span>
+    <span>Eliminar utilizador</span>
+  </button>';
 }
 
 ?>
@@ -29,6 +46,7 @@ function queryDB($conn) {
       <th><abbr title="Nome">Nome</abbr></th>
       <th><abbr title="Email">Email</abbr></th>
       <th><abbr title="Tipo Utilizador">Tipo</abbr></th>
+      <th><abbr title="Tipo Utilizador">Opções</abbr></th>
     </tr>
   </thead>
   <tbody>

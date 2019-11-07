@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     default: 
       break;
   }
+
+  editarUser();
 });
 
 let ativarBgTab = (tab) => {
@@ -19,4 +21,12 @@ let ativarBgTab = (tab) => {
   console.log(tabEl);
   console.log(tab)
   tabEl.classList.toggle('is-active');
+}
+
+//Secção Gerir Utilizadores
+let editarUser = () => {
+  const btnEditar = document.querySelector('#btnEditarUser');
+  btnEditar.addEventListener('click', () => {
+    console.log(btnEditar);
+  });
 }

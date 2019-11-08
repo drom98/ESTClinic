@@ -1,5 +1,7 @@
 <?php 
 
+include_once '../../backend/utils.php';
+include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
 
 ?>
 
@@ -16,7 +18,14 @@
   </thead>
   <tbody>
       <?php 
-      queryDB($conn);
+      switch($_GET['tab']) {
+        case 'utilizadores':
+          queryUsersTable($conn);
+        break;
+        case 'usersPorAprovar':
+          queryUsersPorAprovar($conn);
+        break;
+      }
       ?>
   </tbody>
 </table>

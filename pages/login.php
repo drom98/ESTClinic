@@ -1,6 +1,6 @@
 <?php 
 if(isset($_GET["erro"])) {
-  require_once '../php/utils.php';
+  require_once '../backend/utils.php';
   echo "<script type='text/javascript' src='".JS."login.js'></script>";
 }
 ?>
@@ -29,7 +29,7 @@ if(isset($_GET["erro"])) {
                         require_once 'parts/message-permissao.html';
                         require_once 'parts/message-aprovar.html';
                         ?>
-                        <form action="../php/login_registo/login.php" method="POST">
+                        <form action="../backend/login_registo/login.php" method="POST">
                         <div class="field">
                           <label class="label">Nome:</label>
                           <div class="control has-icons-left">

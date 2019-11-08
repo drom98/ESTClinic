@@ -31,7 +31,7 @@ let editarUser = () => {
       const modalEl = document.querySelector('.modal');
       modalEl.classList.toggle('is-active');
 
-      fetch("../../php/admin/admin_querys.php?userid=" + btnEditar[i].name, {
+      fetch("utilizadores.php?userid=" + btnEditar[i].name, {
         method: "GET"
       });
     });

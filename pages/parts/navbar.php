@@ -4,8 +4,8 @@ if(!isset($_SESSION)) {
 	session_start();
 }
 
-if(file_exists('../php/utils.php')) {
-	include_once '../php/utils.php';
+if(file_exists('../backend/utils.php')) {
+	include_once '../backend/utils.php';
 }
 ?>
 
@@ -24,7 +24,7 @@ if(file_exists('../php/utils.php')) {
 			<?php 
 			if(!verificarSessao()) { ?>
 				<a href=<?php echo(PAGES.'admin/admin.php') ?> class="navbar-item"><span class="icon" style="margin-right: 3px"><i class="fas fa-user"></i></span><?php echo($_SESSION['nome']) ?></a>
-				<a href=<?php echo(PHP.'login_registo/logout.php') ?> class="navbar-item">Sair</a> <?php
+				<a href=<?php echo(BACKEND.'login_registo/logout.php') ?> class="navbar-item">Sair</a> <?php
 			} else { ?>
 				<a href=<?php echo(PAGES.'login.php') ?> class="navbar-item">Login</a>
 				<a href=<?php echo(PAGES.'registo.php') ?> class="navbar-item">Registo</a> <?php

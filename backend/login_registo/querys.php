@@ -1,7 +1,7 @@
 <?php 
 
 include_once '../utils.php';
-include_once($_SERVER['DOCUMENT_ROOT'].PHP.'basedados.h');
+include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
 
 function queryNomeUser($conn, $nome) {
   $sql = "SELECT nomeUtilizador FROM utilizador WHERE nomeUtilizador = '$nome'";

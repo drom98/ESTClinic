@@ -4,12 +4,14 @@ if(!isset($_SESSION)) {
   session_start();
 }
 
-include_once '../../php/utils.php';
+include_once '../../backend/utils.php';
+include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'admin/admin_querys.php');
 
 //True = sem sessão
 if(verificarSessao()) {
   header('Location: '.PAGES.'login.php?erro=permissao');
 }
+
 
 ?>
 
@@ -23,7 +25,6 @@ if(verificarSessao()) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
-<?php include_once '../parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
   <div class="hero is-light">
     <div class="hero-body">
@@ -34,7 +35,7 @@ if(verificarSessao()) {
     </div>
   </div>
   
-  <div class="columns is-centered is-vcentered">
+  <div class="columns">
     <div class="column is-one-quarter">
       <div class="section">
         <?php include_once '../parts/menu.html'; ?>

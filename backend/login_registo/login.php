@@ -2,7 +2,7 @@
 
 include_once '../basedados.h';
 include_once '../utils.php';
-include($_SERVER['DOCUMENT_ROOT'].PHP.'login_registo/querys.php');
+include($_SERVER['DOCUMENT_ROOT'].BACKEND.'login_registo/querys.php');
 
 if(isset($_POST["nome"]) && isset($_POST["password"])) {
   $nome = mysqli_real_escape_string($conn, $_POST['nome']);

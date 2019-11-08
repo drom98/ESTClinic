@@ -9,7 +9,7 @@
   </head>
   <body class="has-navbar-fixed-top">
     <?php 
-    require_once '../php/utils.php';
+    require_once '../backend/utils.php';
     require_once 'parts/navbar.php';
     ?>
     <section class="hero is-fullheight-with-navbar" id="main">

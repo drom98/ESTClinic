@@ -66,19 +66,25 @@ let editarUser = () => {
     btnEditar[i].addEventListener('click', () => {
       const modalEl = document.querySelector('.modal');
       modalEl.classList.toggle('is-active');
-
-      fetch('../../backend/admin/query_editar_user.php?userid=' + btnEditar[i].name)
-        .then(resposta => resposta.json())
-        .then(data => {
-          console.log(data);
-          const modalTitleEl = document.querySelector('.modal-card-title'); 
-          modalTitleEl.textContent = "Teste";
-        });
+      executarQuery(btnEditar[i].name);
     });
   }
 };
 
-let executarQuer = () => {
-  
+let executarQuery = (id) => {
+  fetch('../../backend/admin/query_editar_user.php?userid=' + id)
+    .then(resposta => resposta.json())
+    .then(data => {
+      console.log(data);
+      const modalTitleEl = document.querySelector('.modal-card-title'); 
+      const nomeLoginInput = document.querySelector('input[name="userName"]');
+      const nomeInput = document.querySelector('input[name="nome"]');
+      const emailInput = document.querySelector('input[name="email"]');
+      const tipoInput = document.querySelector('input[name="tipoUtilizador"]');
+      nomeLoginInput.value = data.nomeUtilizador;
+      nomeInput.value = data.nome;
+      emailInput.value = data.email;
+      modalTitleEl.innerHTML = `Editar dados de: <strong> ${data.nome} </strong>`;
+  });  
 }
 </script>

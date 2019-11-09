@@ -26,7 +26,6 @@ let fecharModal = () => {
 
   bgEl.addEventListener('click', () => {
     modalEl.classList.remove('is-active');
-    console.log('cenas');
   });
   closeBtn.addEventListener('click', () => {
     modalEl.classList.remove('is-active');

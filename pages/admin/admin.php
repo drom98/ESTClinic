@@ -8,17 +8,19 @@ include_once '../../backend/utils.php';
 include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'admin/admin_querys.php');
 
 //Proteger página
-if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
+if(isset($_SESSION['tipoUtilizador'])) {
+  if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
+    header('Location: '.PAGES.'login.php?erro=permissao');
+  }
+} else {
   header('Location: '.PAGES.'login.php?erro=permissao');
-} 
+}
 
 function verificarAdmin($tipoUtilizador) {
-  if(isset($tipoUtilizador)) {
-    if($tipoUtilizador == "1") {
-      return true;
-    } else {
-      return false;
-    }
+  if($tipoUtilizador == "1") {
+    return true;
+  } else {
+    return false;
   }
 }
 

@@ -56,8 +56,9 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   editarUser();
-}
-  let editarUser = () => {
+});
+
+let editarUser = () => {
   fecharModal();
   const btnEditar = document.querySelectorAll('#btnEditarUser');
 
@@ -66,15 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const modalEl = document.querySelector('.modal');
       modalEl.classList.toggle('is-active');
 
-      fetch("../../backend/admin/query_editar_user.php?userid=" + btnEditar[i].name, {
-        method: "GET",
-      }).then(function(res) {
-        console.log(res);
-        const modalTitleEl = document.querySelector('.modal-card-title p'); 
-        modalTitleEl.textContent = "Teste";
-      });
+      fetch('../../backend/admin/query_editar_user.php?userid=' + btnEditar[i].name)
+        .then(resposta => resposta.json())
+        .then(data => {
+          console.log(data);
+          const modalTitleEl = document.querySelector('.modal-card-title'); 
+          modalTitleEl.textContent = "Teste";
+        });
     });
   }
+};
 
+let executarQuer = () => {
+  
 }
 </script>

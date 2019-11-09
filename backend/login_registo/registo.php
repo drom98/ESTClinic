@@ -2,7 +2,7 @@
 
 include '../basedados.h';
 include '../utils.php';
-include($_SERVER['DOCUMENT_ROOT'].PHP.'login_registo/querys.php');
+include($_SERVER['DOCUMENT_ROOT'].BACKEND.'login_registo/querys.php');
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $userName = mysqli_real_escape_string($conn, $_POST['userName']);

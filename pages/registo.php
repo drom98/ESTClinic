@@ -26,7 +26,7 @@ if(isset($_GET["erro"])) {
                     <div class="card-content">
                       <h1 class="title has-text-info is-4 has-text-centered">Registe-se</h1>
                       <h2 class="subtitle is-6 has-text-centered">Registe a sua conta.</h2>
-                      <form action="../php/login_registo/registo.php" method="POST">
+                      <form action="../backend/login_registo/registo.php" method="POST">
                         <div class="field">
                           <label class="label">Nome de utilizador:</label>
                           <div class="control has-icons-left">

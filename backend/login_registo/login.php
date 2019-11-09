@@ -11,8 +11,12 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
   if(queryNomeUser($conn, $nome)) {
     if(queryUserPassword($conn, $nome, $password)) {
       $row = queryUserPassword($conn, $nome, $password);
-      defineSessionVariables($row);
-      verificarTipoUtilizador($row);
+      if($row['tipoUtilizador'] != 4) {
+        defineSessionVariables($row);
+        verificarTipoUtilizador($row);
+      } else {
+        header("Location: ../../pages/login.php?erro=aprovar");  
+      }
     } else {
       //Password errada
       header("Location: ../../pages/login.php?erro=password");

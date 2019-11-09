@@ -14,6 +14,7 @@ function queryUsersTable($conn) {
     <td>".mostrarBotoes($row['idUtilizador'])."</td>
     </tr>";
   }
+  mysqli_close($conn);
 }
 
 function queryUsersPorAprovar($conn) {
@@ -30,6 +31,7 @@ function queryUsersPorAprovar($conn) {
     <td>".mostrarBotoes($row['idUtilizador'])."</td>
     </tr>";
   }
+  mysqli_close($conn);
 }
 
 function queryDadosUser($conn, $userid) {

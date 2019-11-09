@@ -1,31 +1,8 @@
-<?php 
-
-//require_once '../../php/basedados.h';
-
-if(isset($_GET['userid'])) {
-  queryDadosUser($conn, $_GET('userid'));
-}
-
-
-function queryDadosUser($conn, $userid) {
-  $sql = "SELECT * FROM utilizador WHERE idUtilizador = '$userid'";
-  $retval = mysqli_query($conn, $sql);
-  $dataRow = mysqli_fetch_array($retval, MYSQLI_ASSOC);
-
-  if($dataRow == NULL) {
-    return false;
-  } else {
-    return $dataRow;
-  }
-}
-
-?>
-
 <div class="modal">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title"><?php $dataRow["nome"] ?></p>
+      <p class="modal-card-title"></p>
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
@@ -71,7 +48,33 @@ function queryDadosUser($conn, $userid) {
     </section>
     <footer class="modal-card-foot">
       <button class="button is-success">Guardar alterações</button>
-      <button class="button" id="btnCancel">Cancel</button>
+      <button class="button" id="btnCancel">Cancelar</button>
     </footer>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  editarUser();
+}
+  let editarUser = () => {
+  fecharModal();
+  const btnEditar = document.querySelectorAll('#btnEditarUser');
+
+  for(let i = 0; i < btnEditar.length; i++) {
+    btnEditar[i].addEventListener('click', () => {
+      const modalEl = document.querySelector('.modal');
+      modalEl.classList.toggle('is-active');
+
+      fetch("../../backend/admin/query_editar_user.php?userid=" + btnEditar[i].name, {
+        method: "GET",
+      }).then(function(res) {
+        console.log(res);
+        const modalTitleEl = document.querySelector('.modal-card-title p'); 
+        modalTitleEl.textContent = "Teste";
+      });
+    });
+  }
+
+}
+</script>

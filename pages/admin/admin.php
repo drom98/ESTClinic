@@ -7,11 +7,20 @@ if(!isset($_SESSION)) {
 include_once '../../backend/utils.php';
 include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'admin/admin_querys.php');
 
-//True = sem sessão
-if(verificarSessao()) {
+//Proteger página
+if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
   header('Location: '.PAGES.'login.php?erro=permissao');
-}
+} 
 
+function verificarAdmin($tipoUtilizador) {
+  if(isset($tipoUtilizador)) {
+    if($tipoUtilizador == "1") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
 ?>
 
@@ -25,6 +34,7 @@ if(verificarSessao()) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
+<?php include_once '../parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
   <div class="hero is-light">
     <div class="hero-body">

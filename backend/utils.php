@@ -8,7 +8,6 @@ if(!defined('ASSETS')) define("ASSETS", substr(dirname(__DIR__), strlen($_SERVER
 
 
 //Verificar sessão
-//True - Sem sessão
 function verificarSessao() {
   if(!isset($_SESSION["idUser"])) {
     return true;

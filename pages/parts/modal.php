@@ -60,12 +60,9 @@
       <p class="modal-card-title">Modal title</p>
       <button class="delete" aria-label="close"></button>
     </header>
-    <section class="modal-card-body">
-      <!-- Content ... -->
-    </section>
     <footer class="modal-card-foot">
-      <button class="button is-danger">Eliminar utilizador</button>
-      <button class="button">Cancelar</button>
+      <button class="button is-danger" id="btnConfirmar">Eliminar utilizador</button>
+      <button class="button" id="btnCancel">Cancelar</button>
     </footer>
   </div>
 </div>

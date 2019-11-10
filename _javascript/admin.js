@@ -19,18 +19,32 @@ let ativarBgTab = (tab) => {
 }
 
 let fecharModal = () => {
-  const modalEl = document.querySelector('.modal');
-  const bgEl = document.querySelector('.modal-background');
-  const closeBtn = document.querySelector('.delete');
-  const btnCancel = document.querySelector('#btnCancel');
+  const modalEl = document.querySelectorAll('.modal');
+  const bgEl = document.querySelectorAll('.modal-background');
+  const closeBtn = document.querySelectorAll('.delete');
+  const btnCancel = document.querySelectorAll('#btnCancel');
 
-  bgEl.addEventListener('click', () => {
-    modalEl.classList.remove('is-active');
+  bgEl.forEach(el => {
+    el.addEventListener('click', () => {
+      modalEl.forEach((modal) => {
+        modal.classList.remove('is-active');
+      });
+    });
   });
-  closeBtn.addEventListener('click', () => {
-    modalEl.classList.remove('is-active');
+
+  closeBtn.forEach(el => {
+    el.addEventListener('click', () => {
+      modalEl.forEach((modal) => {
+        modal.classList.remove('is-active');
+      });
+    });
   });
-  btnCancel.addEventListener('click', () => {
-    modalEl.classList.remove('is-active');
+
+  btnCancel.forEach(el => {
+    el.addEventListener('click', () => {
+      modalEl.forEach((modal) => {
+        modal.classList.remove('is-active');
+      });
+    });
   });
 }

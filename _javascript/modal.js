@@ -1,6 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
   editarUser();
+  eliminarUser();
 });
+
+let eliminarUser = () => {
+  fecharModal();
+  const btnApagar = document.querySelectorAll('#btnApagarUser');
+  const btnConfirmar = document.querySelector('#btnConfirmar');
+
+  for(let i = 0; i < btnApagar.length; i++) {
+    btnApagar[i].addEventListener('click', () => {
+      const modalEl = document.querySelector('#modal-apagar');
+      const modalTitleEl = document.querySelectorAll('.modal-card-title');
+      modalEl.classList.toggle('is-active');
+      fetch('../../backend/admin/query_editar_user.php?userid=' + btnApagar[i].name)
+      .then(resposta => resposta.json())
+      .then(data => {
+        modalTitleEl[1].innerHTML = `Eliminar o utilizador: <strong> ${data.nome}</strong>?`;
+      }); 
+      btnConfirmar.addEventListener('click', () => {
+        executarQueryApagar(btnApagar[i].name);
+      });
+    });
+  }
+}
+
+let executarQueryApagar = (id) => {
+  fetch('../../backend/admin/apagar_user.php?userid=' + id)
+  .then(resposta => resposta.json())
+  .then(data => {
+    if(data = 1) {
+      document.querySelector('.modal').classList.remove('is-active');
+      location.reload();
+    }
+}); 
+}
 
 let editarUser = () => {
   fecharModal();

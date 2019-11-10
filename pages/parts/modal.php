@@ -47,44 +47,10 @@
       </div>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">Guardar alterações</button>
+      <button class="button is-success" id="btnGuardar">Guardar alterações</button>
       <button class="button" id="btnCancel">Cancelar</button>
     </footer>
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  editarUser();
-});
-
-let editarUser = () => {
-  fecharModal();
-  const btnEditar = document.querySelectorAll('#btnEditarUser');
-
-  for(let i = 0; i < btnEditar.length; i++) {
-    btnEditar[i].addEventListener('click', () => {
-      const modalEl = document.querySelector('.modal');
-      modalEl.classList.toggle('is-active');
-      executarQuery(btnEditar[i].name);
-    });
-  }
-};
-
-let executarQuery = (id) => {
-  fetch('../../backend/admin/query_editar_user.php?userid=' + id)
-    .then(resposta => resposta.json())
-    .then(data => {
-      console.log(data);
-      const modalTitleEl = document.querySelector('.modal-card-title'); 
-      const nomeLoginInput = document.querySelector('input[name="userName"]');
-      const nomeInput = document.querySelector('input[name="nome"]');
-      const emailInput = document.querySelector('input[name="email"]');
-      const tipoInput = document.querySelector('input[name="tipoUtilizador"]');
-      nomeLoginInput.value = data.nomeUtilizador;
-      nomeInput.value = data.nome;
-      emailInput.value = data.email;
-      modalTitleEl.innerHTML = `Editar dados de: <strong> ${data.nome} </strong>`;
-  });  
-}
-</script>
+<script src="../../lib/modal.js"></script>

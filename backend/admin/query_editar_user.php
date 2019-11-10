@@ -10,22 +10,4 @@ if(isset($_GET["userid"])) {
   echo(json_encode($row)); 
 } 
 
-/*
-elseif(isset($_POST)) {
-  var_dump($_POST);
-  $dados = json_decode($_POST[], true);
-  var_dump($dados);
-  $userid = $dados["idUtilizador"];
-  $nomeUtilizador = $_POST["nomeUtilizador"];
-  $nome = $_POST["nome"];
-  $email = $_POST["email"];
-  $sql = "UPDATE utilizador SET nomeUtilizador = '$nomeUtilizador', nome = '$nome', email = '$email' WHERE idUtilizador = '$userid'";
-  if(mysqli_query($conn, $sql)) {
-    echo "Deu";
-  } else {
-    echo "Não deu";
-    }
-}
-*/
-
 ?>

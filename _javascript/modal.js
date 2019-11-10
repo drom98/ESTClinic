@@ -47,15 +47,17 @@ let submeterAlteracoes = (id, login, nome, email) => {
       email: email.value
     }
 
-    console.log(dados);
-    console.log(JSON.stringify(dados));
-
     fetch('../../backend/admin/update_dados.php', {
       method: 'POST',
       body: JSON.stringify(dados)
     })
-      .then(resposta => resposta)
-      .then(data => console.log(data))
+      .then(resposta => resposta.json())
+      .then(data => {
+        if(data = 1) {
+          document.querySelector('.modal').classList.remove('is-active');
+          location.reload();
+        }
+      })
       .catch(erro => console.log(erro))
   })
 }

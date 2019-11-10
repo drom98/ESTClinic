@@ -12,10 +12,10 @@ if(isset($_POST)) {
   $email = $data["email"];
   $sql = "UPDATE utilizador SET nomeUtilizador = '$nomeLogin', nome = '$nome', email = '$email' WHERE idUtilizador = '$idUtilizador'";
   if(mysqli_query($conn, $sql)) {
-    echo "Deu";
+    echo(1);
   } else {
-    echo "Não deu";
-    }
+    echo(-1);
+  }
 }
 
 ?>

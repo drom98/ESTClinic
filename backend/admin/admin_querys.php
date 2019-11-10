@@ -54,7 +54,7 @@ function mostrarBotoes($userID) {
     </span>
     <span>Editar dados</span>
   </button>
-  <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser">
+  <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser" name="'.($userID).'">
     <span class="icon">
       <i class="fas fa-trash"></i>
     </span>

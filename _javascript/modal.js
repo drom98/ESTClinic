@@ -8,7 +8,7 @@ let editarUser = () => {
 
   for(let i = 0; i < btnEditar.length; i++) {
     btnEditar[i].addEventListener('click', () => {
-      const modalEl = document.querySelector('.modal');
+      const modalEl = document.querySelector('#modal-editar');
       modalEl.classList.toggle('is-active');
       executarQuery(btnEditar[i].name);
     });

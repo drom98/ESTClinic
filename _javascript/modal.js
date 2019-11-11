@@ -1,7 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
   editarUser();
   eliminarUser();
+  eliminarPermanente();
 });
+
+let eliminarPermanente = () => {
+  fecharModal();
+
+  const btnApagarPerma = document.querySelectorAll('#btnApagarPermaUser');
+  const btnConfirmar = document.querySelector('#btnConfirmar');
+
+  for(let i = 0; i < btnApagarPerma.length; i++) {
+    btnApagarPerma[i].addEventListener('click', () => {
+      console.log(btnApagarPerma);
+      const modalEl = document.querySelector('#modal-apagar');
+      const modalTitleEl = document.querySelectorAll('.modal-card-title');
+      modalEl.classList.toggle('is-active');
+      fetch('../../backend/admin/query_editar_user.php?userid=' + btnApagarPerma[i].name)
+      .then(resposta => resposta.json())
+      .then(data => {
+        modalTitleEl[1].innerHTML = `Apagar permanentemente o utilizador: <strong> ${data.nome}</strong>?`;
+      }); 
+      btnConfirmar.addEventListener('click', () => {
+        executarQueryApagarPerma(btnApagarPerma[i].name);
+      });
+    });
+  }
+}
+
+let executarQueryApagarPerma = (id) => {
+  fetch('../../backend/admin/apagar-perma.php?userid=' + id)
+  .then(resposta => resposta.json())
+  .then(data => {
+    if(data = 1) {
+      document.querySelector('.modal').classList.remove('is-active');
+      location.reload();
+    }
+}); 
+}
 
 let eliminarUser = () => {
   fecharModal();

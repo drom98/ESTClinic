@@ -25,6 +25,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
         case 'usersPorAprovar':
           queryUsersPorAprovar($conn);
         break;
+        case 'usersEliminados':
+          queryUsersEliminados($conn);
+        break;
       }
       ?>
   </tbody>

@@ -1,7 +1,7 @@
 <?php 
 
 function queryUsersTable($conn) {
-  $sql = "SELECT * FROM utilizador";
+  $sql = "SELECT * FROM utilizador WHERE tipoUtilizador <> 4 AND tipoUtilizador <> 6";
   $retval = mysqli_query($conn, $sql);
   while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
     echo "
@@ -46,20 +46,90 @@ function queryDadosUser($conn, $userid) {
   }
 }
 
-function mostrarBotoes($userID) { 
-  return '
-  <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
-    <span class="icon">
-      <i class="fas fa-user-edit"></i>
-    </span>
-    <span>Editar dados</span>
-  </button>
-  <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser" name="'.($userID).'">
-    <span class="icon">
-      <i class="fas fa-trash"></i>
-    </span>
-    <span>Eliminar utilizador</span>
-  </button>';
+function queryUsersEliminados($conn) {
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '6' AND T.idTipo = U.tipoUtilizador";
+  $retval = mysqli_query($conn, $sql);
+  if(mysqli_num_rows($retval) != 0) {
+    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "
+      <tr>
+      <td>".$row['idUtilizador']."</td>
+      <td>".$row['nomeUtilizador']."</td>
+      <td>".$row['nome']."</td>
+      <td>".$row['email']."</td>
+      <td>".$row['descricao']."</td>
+      <td>".mostrarBotoes($row['idUtilizador'])."</td>
+      </tr>";
+    }
+  } else {
+    echo "
+    <tr>
+    <td colspan='6' class='has-text-centered'>
+    Não foram encontrados registos nesta tabela.
+    </td>
+    </tr>
+    ";
+  }
+
+}
+
+function mostrarBotoes($userID) {
+  if(isset($_GET["tab"])) {
+    $tab = $_GET["tab"];
+  }
+  switch($tab) {
+    case 'usersPorAprovar':
+      return '
+      <button class="button is-success is-light is-small is-fullwidth" id="btnAprovarUser" name="'.($userID).'">
+      <span class="icon">
+        <i class="fas fa-user-check"></i>
+      </span>
+      <span>Aprovar utilizador</span>
+    </button>
+      <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-user-edit"></i>
+        </span>
+        <span>Editar dados</span>
+      </button>
+      <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-trash"></i>
+        </span>
+        <span>Eliminar utilizador</span>
+      </button>';
+    break;
+    case 'usersEliminados':
+      return '
+      <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-user-edit"></i>
+        </span>
+        <span>Editar dados</span>
+      </button>
+      <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarPermaUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-trash"></i>
+        </span>
+        <span>Eliminar permanentemente</span>
+      </button>';
+    break;
+    case 'utilizadores':
+      return '
+      <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-user-edit"></i>
+        </span>
+        <span>Editar dados</span>
+      </button>
+      <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-trash"></i>
+        </span>
+        <span>Eliminar utilizador</span>
+      </button>';
+    break;
+  }
 }
 
 ?>

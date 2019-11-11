@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
     case 'usersPorAprovar':
       ativarBgTab(value);
+      break;
+    case 'usersEliminados':
+      ativarBgTab(value);
+      break;
     default: 
       break;
   }

@@ -8,6 +8,9 @@ function tabSwitch($tab) {
     case 'usersPorAprovar':
       require_once 'users-por-aprovar.php';
       break;
+    case 'usersEliminados':
+      require_once 'usersEliminados.php';
+    break;
     default:
       break;
   }

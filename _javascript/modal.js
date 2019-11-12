@@ -149,24 +149,40 @@ let executarQuery = (id) => {
   const nomeLoginInput = document.querySelector('input[name="userName"]');
   const nomeInput = document.querySelector('input[name="nome"]');
   const emailInput = document.querySelector('input[name="email"]');
-  const tipoInput = document.querySelector('input[name="tipoUtilizador"]');
+  const tipoInput = document.querySelectorAll('input[name="tipoUser"]');
   fetch('../../backend/admin/query_editar_user.php?userid=' + id)
     .then(resposta => resposta.json())
     .then(data => {
       console.log(data);
-      setInputValues(data, modalTitleEl, nomeLoginInput, nomeInput, emailInput);
+      setInputValues(data, modalTitleEl, nomeLoginInput, nomeInput, emailInput, tipoInput);
   });  
-  submeterAlteracoes(id, nomeLoginInput, nomeInput, emailInput);
+  submeterAlteracoes(id, nomeLoginInput, nomeInput, emailInput, tipoInput);
 }
 
-let setInputValues = (data, modal, login, nome, email) => {
+let setInputValues = (data, modal, login, nome, email, tipoUser) => {
   modal.innerHTML = `Editar dados de: <strong> ${data.nome} </strong>`;
   login.value = data.nomeUtilizador;
   nome.value = data.nome;
   email.value = data.email;
+  switch(data.tipoUtilizador) {
+    case "1":
+      tipoUser[0].checked = true;
+      break;
+    case "2":
+      tipoUser[1].checked = true;
+      break;
+    case "3":
+      tipoUser[2].checked = true;
+      break;
+    case "5":
+      tipoUser[3].checked = true;
+      break;
+    default:
+      break;
+  }
 }
 
-let submeterAlteracoes = (id, login, nome, email) => {
+let submeterAlteracoes = (id, login, nome, email, tipoUser) => {
   const btnGuardarAlteracoes = document.querySelector('#btnGuardar');
   btnGuardarAlteracoes.addEventListener('click', () => {
     const dados = {
@@ -176,6 +192,12 @@ let submeterAlteracoes = (id, login, nome, email) => {
       email: email.value
     }
 
+    tipoUser.forEach(element => {
+      if(element.checked == true) {
+        dados.tipoUser = element.value
+      }
+    });
+    
     fetch('../../backend/admin/update_dados.php', {
       method: 'POST',
       body: JSON.stringify(dados)
@@ -187,6 +209,6 @@ let submeterAlteracoes = (id, login, nome, email) => {
           location.reload();
         }
       })
-      .catch(erro => console.log(erro))
+      .catch(erro => console.log(erro)) 
   })
 }

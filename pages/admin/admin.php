@@ -5,7 +5,7 @@ if(!isset($_SESSION)) {
 }
 
 include_once '../../backend/utils.php';
-include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'admin/admin_querys.php');
+include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'admin/table_querys.php');
 
 //Proteger página
 if(isset($_SESSION['tipoUtilizador'])) {

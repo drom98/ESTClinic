@@ -2,7 +2,67 @@ document.addEventListener('DOMContentLoaded', () => {
   editarUser();
   eliminarUser();
   eliminarPermanente();
+  aprovarUtilizador();
+  restaurarUtilizador();
 });
+
+let restaurarUtilizador = () => {
+  fecharModal();
+
+  const btnRestaurarUser = document.querySelectorAll('#btnRestaurarUser');
+  const btnConfirmar = document.querySelectorAll('#btnConfirmar');
+
+  for(let i = 0; i < btnRestaurarUser.length; i++) {
+    btnRestaurarUser[i].addEventListener('click', () => {
+      const modalEl = document.querySelector('#modal-aprovar');
+      const modalTitleEl = document.querySelectorAll('.modal-card-title');
+      modalEl.classList.toggle('is-active');
+      fetch('../../backend/admin/query_editar_user.php?userid=' + btnRestaurarUser[i].name)
+      .then(resposta => resposta.json())
+      .then(data => {
+        modalTitleEl[2].innerHTML = `Pretende restaurar o utilizador: <strong> ${data.nome}</strong>?`;
+      }); 
+      btnConfirmar[1].addEventListener('click', () => {
+        executarQueryAprovarUser(btnRestaurarUser[i].name);
+      });
+    });
+  }
+}
+
+let aprovarUtilizador = () => {
+  fecharModal();
+
+  const btnAprovarUser = document.querySelectorAll('#btnAprovarUser');
+  const btnConfirmar = document.querySelectorAll('#btnConfirmar');
+
+  for(let i = 0; i < btnAprovarUser.length; i++) {
+    btnAprovarUser[i].addEventListener('click', () => {
+      console.log(btnAprovarUser[i]);
+      const modalEl = document.querySelector('#modal-aprovar');
+      const modalTitleEl = document.querySelectorAll('.modal-card-title');
+      modalEl.classList.toggle('is-active');
+      fetch('../../backend/admin/query_editar_user.php?userid=' + btnAprovarUser[i].name)
+      .then(resposta => resposta.json())
+      .then(data => {
+        modalTitleEl[2].innerHTML = `Pretende aprovar o utilizador: <strong> ${data.nome}</strong>?`;
+      }); 
+      btnConfirmar[1].addEventListener('click', () => {
+        executarQueryAprovarUser(btnAprovarUser[i].name);
+      });
+    });
+  }
+}
+
+let executarQueryAprovarUser = (id) => {
+  fetch('../../backend/admin/aprovar-user.php?userid=' + id)
+  .then(resposta => resposta.json())
+  .then(data => {
+    if(data = 1) {
+      document.querySelector('.modal').classList.remove('is-active');
+      location.reload();
+    }
+  }); 
+}
 
 let eliminarPermanente = () => {
   fecharModal();
@@ -12,7 +72,6 @@ let eliminarPermanente = () => {
 
   for(let i = 0; i < btnApagarPerma.length; i++) {
     btnApagarPerma[i].addEventListener('click', () => {
-      console.log(btnApagarPerma);
       const modalEl = document.querySelector('#modal-apagar');
       const modalTitleEl = document.querySelectorAll('.modal-card-title');
       modalEl.classList.toggle('is-active');
@@ -36,7 +95,7 @@ let executarQueryApagarPerma = (id) => {
       document.querySelector('.modal').classList.remove('is-active');
       location.reload();
     }
-}); 
+  }); 
 }
 
 let eliminarUser = () => {

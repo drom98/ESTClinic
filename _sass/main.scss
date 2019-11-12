@@ -28,6 +28,7 @@ $primary-invert: $pink-invert;
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
 @import "../node_modules/bulma/bulma";
+@import "checkbox.sass";
 
 .bm--card-equal-height {
     height: 100%;

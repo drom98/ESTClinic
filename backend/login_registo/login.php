@@ -13,7 +13,7 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
       $row = queryUserPassword($conn, $nome, $password);
       if($row['tipoUtilizador'] != 4) {
         defineSessionVariables($row);
-        verificarTipoUtilizador($row);
+        verificarTipoUtilizador($row['tipoUtilizador']);
       } else {
         header("Location: ../../pages/login.php?erro=aprovar");  
       }
@@ -37,9 +37,9 @@ function defineSessionVariables($row) {
   $_SESSION["password"] = $row["password"];
   $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
 }
-
+/*
 function verificarTipoUtilizador($row) {
-  if ($row['tipoUtilizador'] == 1){
+  if ($row == 1){
     header("Location: ../../pages/admin/admin.php");
   } else if ($row['tipoUtilizador'] == 2){
     header("Location: ../../pages/medico.php");
@@ -51,4 +51,5 @@ function verificarTipoUtilizador($row) {
     header("Location: ../../pages/utente.php");
   }
 }
+*/
 ?>

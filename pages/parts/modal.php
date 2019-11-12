@@ -15,6 +15,7 @@
           </span>
         </div>
         <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
+      </div>
 
       <div class="field">
         <label class="label">Nome:</label>
@@ -24,6 +25,7 @@
             <i class="fas fa-user"></i>
           </span>
         </div>
+      </div>
 
       <div class="field">
         <label class="label">Email:</label>
@@ -33,18 +35,23 @@
             <i class="fas fa-envelope"></i>
           </span>
         </div>
+      </div>
 
       <div class="field">
-        <label class="label">Tipo de utilizador:</label>
-        <div class="control">
-          <select name="tipoUSER">
-            <option value="1">Volvo</option>
-            <option value="2">Saab</option>
-            <option value="3">Fiat</option>
-            <option value="audi">Audi</option>
-          </select> 
-        </div>
+        <label class="label">Tipo de Utilizador:</label>
+        <input class="is-checkradio is-warning" id="admin-radio" type="radio" name="admin-radio">
+        <label for="admin-radio">Administrador</label>
+
+        <input class="is-checkradio is-info" id="medico-radio" type="radio" name="medico-radio">
+        <label for="medico-radio">Médico</label>
+
+        <input class="is-checkradio is-info" id="enf-radio" type="radio" name="enf-radio">
+        <label for="enf-radio">Enfermeiro</label>
+
+        <input class="is-checkradio is-info" id="utente-radio" type="radio" name="utente-radio">
+        <label for="utente-radio">Utente</label>
       </div>
+
     </section>
     <footer class="modal-card-foot">
       <button class="button is-success" id="btnGuardar">Guardar alterações</button>
@@ -62,6 +69,20 @@
     </header>
     <footer class="modal-card-foot">
       <button class="button is-danger" id="btnConfirmar">Eliminar utilizador</button>
+      <button class="button" id="btnCancel">Cancelar</button>
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="modal-aprovar">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <footer class="modal-card-foot">
+      <button class="button is-success" id="btnConfirmar">Aprovar utilizador</button>
       <button class="button" id="btnCancel">Cancelar</button>
     </footer>
   </div>

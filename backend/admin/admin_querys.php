@@ -1,35 +1,55 @@
 <?php 
 
 function queryUsersTable($conn) {
-  $sql = "SELECT * FROM utilizador WHERE tipoUtilizador <> 4 AND tipoUtilizador <> 6";
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador";
   $retval = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+  if(mysqli_num_rows($retval) != 0) {
+    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "
+      <tr>
+      <td>".$row['idUtilizador']."</td>
+      <td>".$row['nomeUtilizador']."</td>
+      <td>".$row['nome']."</td>
+      <td>".$row['email']."</td>
+      <td>".$row['descricao']."</td>
+      <td>".mostrarBotoes($row['idUtilizador'])."</td>
+      </tr>";
+    }
+  } else {
     echo "
     <tr>
-    <td>".$row['idUtilizador']."</td>
-    <td>".$row['nomeUtilizador']."</td>
-    <td>".$row['nome']."</td>
-    <td>".$row['email']."</td>
-    <td>".$row['tipoUtilizador']."</td>
-    <td>".mostrarBotoes($row['idUtilizador'])."</td>
-    </tr>";
+    <td colspan='6' class='has-text-centered'>
+    Não foram encontrados registos nesta tabela.
+    </td>
+    </tr>
+    ";
   }
   mysqli_close($conn);
 }
 
 function queryUsersPorAprovar($conn) {
-  $sql = "SELECT * FROM utilizador WHERE tipoUtilizador = '4'";
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '4' AND T.idTipo = U.tipoUtilizador";
   $retval = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+  if(mysqli_num_rows($retval) != 0) {
+    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "
+      <tr>
+      <td>".$row['idUtilizador']."</td>
+      <td>".$row['nomeUtilizador']."</td>
+      <td>".$row['nome']."</td>
+      <td>".$row['email']."</td>
+      <td>".$row['descricao']."</td>
+      <td>".mostrarBotoes($row['idUtilizador'])."</td>
+      </tr>";
+    }
+  } else {
     echo "
     <tr>
-    <td>".$row['idUtilizador']."</td>
-    <td>".$row['nomeUtilizador']."</td>
-    <td>".$row['nome']."</td>
-    <td>".$row['email']."</td>
-    <td>".$row['tipoUtilizador']."</td>
-    <td>".mostrarBotoes($row['idUtilizador'])."</td>
-    </tr>";
+    <td colspan='6' class='has-text-centered'>
+    Não foram encontrados registos nesta tabela.
+    </td>
+    </tr>
+    ";
   }
   mysqli_close($conn);
 }
@@ -101,6 +121,12 @@ function mostrarBotoes($userID) {
     break;
     case 'usersEliminados':
       return '
+      <button class="button is-success is-light is-small is-fullwidth" id="btnRestaurarUser" name="'.($userID).'">
+      <span class="icon">
+        <i class="fas fa-user-check"></i>
+      </span>
+      <span>Restaurar utilizador</span>
+    </button>
       <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
         <span class="icon">
           <i class="fas fa-user-edit"></i>

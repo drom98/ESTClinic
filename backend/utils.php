@@ -16,4 +16,19 @@ function verificarSessao() {
   }
 }
 
+//Verificar tipo de utilizador
+function verificarTipoUtilizador($tipoUtilizador) {
+  if ($tipoUtilizador == 1){
+    header("Location: ../../pages/admin/admin.php");
+  } else if ($tipoUtilizador == 2){
+    header("Location: ../../pages/medico.php");
+  } else if ($tipoUtilizador == 3){
+    header("Location: ../../pages/enfermeiro.php");
+  } else if ($tipoUtilizador == 4){
+    header("Location: ../../pages/login.php?erro=aprovar");
+  } else if ($tipoUtilizador == 5){
+    header("Location: ../../pages/utente.php");
+  }
+}
+
 ?>

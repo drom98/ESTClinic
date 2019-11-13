@@ -38,7 +38,7 @@ function verificarAdmin($tipoUtilizador) {
 <body class="has-navbar-fixed-top">
 <?php include_once '../parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
-  <div class="hero is-dark">
+  <div class="hero is-link is-bold">
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-3">Administrador</h1>

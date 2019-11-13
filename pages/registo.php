@@ -24,7 +24,7 @@ if(isset($_GET["erro"])) {
                 <div class="column is-half">
                   <div class="card">
                     <div class="card-content">
-                      <h1 class="title has-text-info is-4 has-text-centered">Registe-se</h1>
+                      <h1 class="title has-text-link is-4 has-text-centered">Registe-se</h1>
                       <h2 class="subtitle is-6 has-text-centered">Registe a sua conta.</h2>
                       <form action="../backend/login_registo/registo.php" method="POST">
                         <div class="field">
@@ -71,7 +71,7 @@ if(isset($_GET["erro"])) {
 
                         <div class="field is-grouped">
                           <div class="control">
-                            <input type="submit" class="button is-info" value="Registar">
+                            <input type="submit" class="button is-link" value="Registar">
                           </div>
                         </div>
                         </form>

@@ -46,11 +46,3 @@ $primary-invert: $pink-invert;
     justify-content: center;
     align-items: center;
 }
-
-.is-active {
-    background-color: $info !important;
-}
-
-.modal.is-active {
-    background: unset !important; 
-}

@@ -106,7 +106,7 @@ function mostrarBotoes($userID) {
       </span>
       <span>Aprovar utilizador</span>
     </button>
-      <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+      <button class="button is-link is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
         <span class="icon">
           <i class="fas fa-user-edit"></i>
         </span>
@@ -127,7 +127,7 @@ function mostrarBotoes($userID) {
       </span>
       <span>Restaurar utilizador</span>
     </button>
-      <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+      <button class="button is-link is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
         <span class="icon">
           <i class="fas fa-user-edit"></i>
         </span>
@@ -142,7 +142,7 @@ function mostrarBotoes($userID) {
     break;
     case 'utilizadores':
       return '
-      <button class="button is-info is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+      <button class="button is-link is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
         <span class="icon">
           <i class="fas fa-user-edit"></i>
         </span>

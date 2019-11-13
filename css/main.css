@@ -8006,9 +8006,3 @@ label.panel-block {
   height: calc(100vh - 52px);
   justify-content: center;
   align-items: center; }
-
-.is-active {
-  background-color: #3298dc !important; }
-
-.modal.is-active {
-  background: unset !important; }

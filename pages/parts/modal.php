@@ -42,13 +42,13 @@
         <input class="is-checkradio is-warning" id="admin-radio" type="radio" name="tipoUser" value="1">
         <label for="admin-radio">Administrador</label>
 
-        <input class="is-checkradio is-info" id="medico-radio" type="radio" name="tipoUser" value="2">
+        <input class="is-checkradio is-link" id="medico-radio" type="radio" name="tipoUser" value="2">
         <label for="medico-radio">Médico</label>
 
-        <input class="is-checkradio is-info" id="enf-radio" type="radio" name="tipoUser" value="3">
+        <input class="is-checkradio is-link" id="enf-radio" type="radio" name="tipoUser" value="3">
         <label for="enf-radio">Enfermeiro</label>
 
-        <input class="is-checkradio is-info" id="utente-radio" type="radio" name="tipoUser" value="5">
+        <input class="is-checkradio is-link" id="utente-radio" type="radio" name="tipoUser" value="5">
         <label for="utente-radio">Utente</label>
       </div>
 

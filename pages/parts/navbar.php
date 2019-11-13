@@ -9,7 +9,7 @@ if(file_exists('../backend/utils.php')) {
 }
 ?>
 
-<nav class="navbar is-info is-fixed-top" role="navigation">
+<nav class="navbar is-link is-fixed-top" role="navigation">
 	<div class="container">
 	  <div class="navbar-brand">
 	    <a href=<?php echo(PAGES.'index.php') ?> class="navbar-item">ESTClinic</a>	

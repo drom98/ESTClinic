@@ -18,13 +18,13 @@
           <div class="columns is-desktop is-vcentered">
             <div class="column is-half">
               <h1 class="title">
-                Faça a sua marcação online na EST<span class="has-text-info">Clinic</span>.
+                Faça a sua marcação online na EST<span class="has-text-link">Clinic</span>.
               </h1>
               <h2 class="subtitle is-5">
                   Entre com a sua conta ou registe-se para fazer a sua marcação.
               </h2>
-              <a class="button is-info" href=<?php echo(PAGES.'login.php'); ?>>Iniciar sessão</a>
-              <a class="button is-outlined is-info" href="#" style="margin-left: 1rem;">Mais informações</a>
+              <a class="button is-link" href=<?php echo(PAGES.'login.php'); ?>>Iniciar sessão</a>
+              <a class="button is-outlined is-link" href="#" style="margin-left: 1rem;">Mais informações</a>
             </div>
             <div class="column is-half is-desktop is-vcentered">
               <figure class="image">
@@ -36,7 +36,7 @@
       </div>
     </section>
     <section id="info-section">
-      <div class="hero is-medium is-info">
+      <div class="hero is-medium is-link">
         <div class="hero-body">
           <div class="container">
             <h1 class="title">O que temos a oferecer.</h1>
@@ -52,13 +52,13 @@
             <div class="card bm--card-equal-height">
               <div class="card-image">
                 <figure class="image has-text-centered">
-                  <span class="icon is-large has-text-info">
+                  <span class="icon is-large has-text-link">
                     <i class="fas fa-heart fa-7x"></i>
                   </span>
                 </figure>
               </div>
               <div class="card-content">
-                <p class="title is-4 has-text-centered has-text-info is-spaced">As nossas especialidades</p>
+                <p class="title is-4 has-text-centered has-text-link is-spaced">As nossas especialidades</p>
                 <p class="subtitle has-text-centered is-size-6">
                   <i class="fas fa-check"></i>
                   Cirurgia Geral
@@ -83,13 +83,13 @@
             <div class="card bm--card-equal-height">
               <div class="card-image">
                 <figure class="image has-text-centered">
-                  <span class="icon has-text-info">
+                  <span class="icon has-text-link">
                     <i class="fas fa-user-md fa-7x"></i>
                   </span>
                 </figure>
               </div>
               <div class="card-content">
-                <p class="title is-4 has-text-centered has-text-info is-spaced">Os nossos médicos</p>
+                <p class="title is-4 has-text-centered has-text-link is-spaced">Os nossos médicos</p>
                 <p class="subtitle has-text-centered is-size-6">
                   <i class="fas fa-check"></i>
                   Dr. Carlos
@@ -114,13 +114,13 @@
             <div class="card bm--card-equal-height">
               <div class="card-image">
                 <figure class="image has-text-centered">
-                  <span class="icon has-text-info is-large">
+                  <span class="icon has-text-link is-large">
                     <i class="fas fa-stethoscope fa-7x"></i>
                   </span>
                 </figure>
               </div>
               <div class="card-content">
-                <p class="title is-4 has-text-centered has-text-info is-spaced">Os nossos enfermeiros</p>
+                <p class="title is-4 has-text-centered has-text-link is-spaced">Os nossos enfermeiros</p>
                 <p class="subtitle has-text-centered is-size-6">
                   <i class="fas fa-check"></i>
                   Enf. Sérgio
@@ -145,7 +145,7 @@
     </section>
 
     <section id="contact-section">
-      <div class="hero is-medium is-info">
+      <div class="hero is-medium is-link">
         <div class="hero-body">
           <div class="container">
             <h1 class="title">Onde nos encontramos.</h1>
@@ -158,7 +158,7 @@
       <div class="container">
         <div class="columns is-gapless is-vcentered">
           <div class="column is-2 has-text-centered">
-            <figure class="image has-text-info">
+            <figure class="image has-text-link">
               <i class="fas fa-map-marker-alt fa-3x"></i>
             </figure>
           </div>
@@ -173,7 +173,7 @@
 
         <div class="columns is-gapless is-vcentered">
           <div class="column is-2 has-text-centered">
-            <figure class="image has-text-info">
+            <figure class="image has-text-link">
               <i class="fas fa-phone-alt fa-3x"></i>
             </figure>
           </div>
@@ -187,7 +187,7 @@
 
         <div class="columns is-gapless is-vcentered">
           <div class="column is-2 has-text-centered">
-            <figure class="image has-text-info">
+            <figure class="image has-text-link">
               <i class="fas fa-envelope fa-3x"></i>
             </figure>
           </div>
@@ -207,7 +207,7 @@
           <div class="column is-8-desktop is-offset-2-desktop">
             <p>
               <strong class="has-text-weight-semibold">
-                <p>EST<span class="has-text-info">Clinic</span></p>
+                <p>EST<span class="has-text-link">Clinic</span></p>
               </strong>
             </p>
             <p>

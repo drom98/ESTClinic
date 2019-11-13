@@ -32,34 +32,13 @@ if(isset($_GET["erro"])) {
                         require_once 'parts/message-permissao.html';
                         require_once 'parts/message-aprovar.html';
                         ?>
-                        <form action="../backend/login_registo/login.php" method="POST">
-                        <div class="field">
-                          <label class="label">Nome:</label>
-                          <div class="control has-icons-left">
-                            <input name="nome" type="text" class="input" placeholder="Insira o seu nome..." required>
-                            <span class="icon is-small is-left">
-                              <i class="fas fa-user"></i>
-                            </span>
-                          </div>
-                          <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
-                        </div>
-                        <div class="field">
-                            <label class="label">Password:</label>
-                              <div class="control has-icons-left">
-                                <input name="password" type="password" class="input" placeholder="Insira a sua password..." required>
-                                <span class="icon is-small is-left">
-                                  <i class="fas fa-lock"></i>
-                                </span>
-                              </div>
-                              <p id="password" class="help is-danger is-hidden">Password errada.</p>
-                        </div>
-
-                        <div class="field is-grouped">
-                          <div class="control">
-                            <input type="submit" class="button is-info" value="Entrar">
-                          </div>
-                        </div>
-                        </form>
+                        <?php 
+                        if(!verificarSessao()) {
+                          require_once 'parts/message_com_sessao.html';
+                        } else {
+                          require_once 'parts/login_form.html';
+                        }
+                        ?>
                       </div>
                     </div>
                 </div>

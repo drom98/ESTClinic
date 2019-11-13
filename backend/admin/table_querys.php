@@ -7,11 +7,11 @@ function queryUsersTable($conn) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
       echo "
       <tr>
-      <td>".$row['idUtilizador']."</td>
       <td>".$row['nomeUtilizador']."</td>
       <td>".$row['nome']."</td>
       <td>".$row['email']."</td>
       <td>".$row['descricao']."</td>
+      <td class='has-text-grey'>".$row['data']."</td>
       <td>".mostrarBotoes($row['idUtilizador'])."</td>
       </tr>";
     }

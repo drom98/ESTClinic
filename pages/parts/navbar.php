@@ -23,8 +23,8 @@ if(file_exists('../backend/utils.php')) {
 	  <div class="navbar-end">
 			<?php 
 			if(!verificarSessao()) { ?>
-				<a href=<?php echo(PAGES.'admin/admin.php') ?> class="navbar-item"><span class="icon" style="margin-right: 3px"><i class="fas fa-user"></i></span><?php echo($_SESSION['nome']) ?></a>
-				<a href=<?php echo(BACKEND.'login_registo/logout.php') ?> class="navbar-item">Sair</a> <?php
+				<a href=<?php echo(PAGES.'admin/admin.php') ?> class="navbar-item"><?php echo($_SESSION['nome']) ?><span class="icon" style="margin-left: 2px"><i class="fas fa-user"></i></span></a>
+				<a href=<?php echo(BACKEND.'login_registo/logout.php') ?> class="navbar-item">Sair<span class="icon" style="margin-left: 3px"><i class="fas fa-sign-out-alt"></i></span></a> <?php
 			} else { ?>
 				<a href=<?php echo(PAGES.'login.php') ?> class="navbar-item">Login</a>
 				<a href=<?php echo(PAGES.'registo.php') ?> class="navbar-item">Registo</a> <?php

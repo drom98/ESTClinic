@@ -8006,3 +8006,6 @@ label.panel-block {
   height: calc(100vh - 52px);
   justify-content: center;
   align-items: center; }
+
+.hero-body {
+  justify-content: center !important; }

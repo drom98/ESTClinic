@@ -54,7 +54,7 @@
 
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success" id="btnGuardar">Guardar alterações</button>
+      <button class="button is-link" id="btnGuardar">Guardar alterações</button>
       <button class="button" id="btnCancel">Cancelar</button>
     </footer>
   </div>

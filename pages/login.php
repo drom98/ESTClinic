@@ -20,9 +20,10 @@ if(isset($_GET["erro"])) {
   <?php 
   require_once 'parts/navbar.php';
   ?>
-    <section class="section">
-        <div class="container" id="login-container">
-            <div class="columns is-centered">
+    <section class="hero is-light is-fullheight-with-navbar">
+        <div class="hero-body" id="login-container">
+          <div class="container">
+          <div class="columns is-centered">
                 <div class="column is-half">
                     <div class="card">
                       <div class="card-content">
@@ -43,6 +44,7 @@ if(isset($_GET["erro"])) {
                     </div>
                 </div>
             </div>
+          </div>
         </div>
     </section>
 </body>

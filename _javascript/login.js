@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         erroPermissao(value);
       case 'aprovar':
         erroPermissao(value);
+      case 'logout':
+        erroPermissao(value);
       default: 
         break;
     }

@@ -32,6 +32,7 @@ if(isset($_GET["erro"])) {
                         <?php 
                         require_once 'parts/message-permissao.html';
                         require_once 'parts/message-aprovar.html';
+                        require_once 'parts/message-logout.html';
                         ?>
                         <?php 
                         if(!verificarSessao()) {

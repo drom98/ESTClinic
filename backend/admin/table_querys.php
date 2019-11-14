@@ -1,7 +1,7 @@
 <?php 
 
 function queryUsersTable($conn) {
-  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador";
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador ORDER BY U.data";
   $retval = mysqli_query($conn, $sql);
   if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
@@ -11,18 +11,12 @@ function queryUsersTable($conn) {
       <td>".$row['nome']."</td>
       <td>".$row['email']."</td>
       <td>".$row['descricao']."</td>
-      <td class='has-text-grey'>".$row['data']."</td>
+      <td class='has-text-grey'>".date( 'd/M/Y', strtotime($row['data']))."</td>
       <td>".mostrarBotoes($row['idUtilizador'])."</td>
       </tr>";
     }
   } else {
-    echo "
-    <tr>
-    <td colspan='6' class='has-text-centered'>
-    Não foram encontrados registos nesta tabela.
-    </td>
-    </tr>
-    ";
+    return false;
   }
   mysqli_close($conn);
 }

@@ -42,7 +42,6 @@ function verificarAdmin($tipoUtilizador) {
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-3">Administrador</h1>
-        <h1 class="subtitle is-5">Página de gestão de utilizadores, marcações e escalas de serviço.</h1>
       </div>
     </div>
   </div>
@@ -56,15 +55,9 @@ function verificarAdmin($tipoUtilizador) {
     <div class="column">
       <div class="container is-fluid">
         <div class="section">
-        <div class="notification is-hidden is-success">
-            <button class="delete"></button>
-            Primar lorem ipsum dolor sit amet, consectetur
-            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,
-            consectetur adipiscing elit
-          </div>
         <?php 
           if(isset($_GET['tab'])) {
-            require_once 'tabSwitch.php';
+            require_once '../tabSwitch.php';
             $tab = $_GET['tab'];
             tabSwitch($tab);
           }

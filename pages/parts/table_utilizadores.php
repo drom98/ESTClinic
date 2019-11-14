@@ -3,9 +3,10 @@
 include_once '../../backend/utils.php';
 include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
 
-?>
 
-<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+?>
+  <table class="table is-bordered is-striped is-hoverable is-fullwidth">
   <thead>
     <tr>
       <th>Nome login</abbr></th>
@@ -32,3 +33,5 @@ include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
       ?>
   </tbody>
 </table>
+  </div>
+

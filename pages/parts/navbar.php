@@ -12,7 +12,7 @@ if(file_exists('../backend/utils.php')) {
 <nav class="navbar is-link is-fixed-top" role="navigation">
 	<div class="container">
 	  <div class="navbar-brand">
-	    <a href=<?php echo(PAGES.'index.php') ?> class="navbar-item"><strong class="has-text-dark">EST</strong>Clinic</a>	
+	    <a href=<?php echo(PAGES.'index.php') ?> class="navbar-item"><strong>EST</strong>Clinic</a>	
 	    <!--Adicionar class 'is-active' para mostrar X-->
 	    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 	      <span aria-hidden="true"></span>

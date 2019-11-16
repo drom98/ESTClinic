@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'usersEliminados':
       ativarBgTab(value);
       break;
+    case 'gerirMarcacoes':
+        ativarBgTab(value);
     default: 
       break;
   }

@@ -5,15 +5,15 @@ if(!isset($_SESSION)) {
 }
 
 include_once '../../backend/utils.php';
-include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'admin/table_querys.php');
+include_once '../../backend/admin/utilizadores/table_querys.php';
 
 //Proteger página
 if(isset($_SESSION['tipoUtilizador'])) {
   if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
-    header('Location: '.PAGES.'login.php?erro=permissao');
+    header('Location: ../login.php?erro=permissao');
   }
 } else {
-  header('Location: '.PAGES.'login.php?erro=permissao');
+  header('Location: ../login.php?erro=permissao');
 }
 
 function verificarAdmin($tipoUtilizador) {
@@ -36,12 +36,12 @@ function verificarAdmin($tipoUtilizador) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
-<?php include_once '../parts/modal.php'; ?>
+<?php include_once 'parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
   <div class="hero is-link">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title is-3">Administrador</h1>
+        <h1 class="is-size-4"><strong class="has-text-light">Bem vindo</strong>, <?php echo($_SESSION["nome"]) ?></h1>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ function verificarAdmin($tipoUtilizador) {
   <div class="columns">
     <div class="column is-one-quarter">
       <div class="section">
-        <?php include_once '../parts/menu.html'; ?>
+        <?php include_once 'parts/menu.html'; ?>
       </div>
     </div>
     <div class="column">
@@ -66,6 +66,8 @@ function verificarAdmin($tipoUtilizador) {
       </div>
     </div>
   </div>
+  <script src="../../lib/timetable.js"></script>
+  <script src="../../lib/marcacoes.js"></script>
   <script src="../../lib/admin.js"></script>
 </body>
 </html>

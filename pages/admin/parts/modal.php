@@ -51,7 +51,6 @@
         <input class="is-checkradio is-link" id="utente-radio" type="radio" name="tipoUser" value="5">
         <label for="utente-radio">Utente</label>
       </div>
-
     </section>
     <footer class="modal-card-foot">
       <button class="button is-link" id="btnGuardar">Guardar alterações</button>

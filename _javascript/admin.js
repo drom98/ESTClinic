@@ -1,21 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
   const urlString = window.location.href;
   const url = new URL(urlString);
-  const value = url.searchParams.get("tab");
-  switch(value) {
+  const tabValue = url.searchParams.get("tab");
+  const mValue = url.searchParams.get("m");
+  switch(tabValue) {
     case 'utilizadores':
-      ativarBgTab(value);
+      ativarBgTab(tabValue);
       break;
     case 'usersPorAprovar':
-      ativarBgTab(value);
+      ativarBgTab(tabValue);
       break;
     case 'usersEliminados':
-      ativarBgTab(value);
+      ativarBgTab(tabValue);
       break;
     case 'gerirMarcacoes':
-        ativarBgTab(value);
+        ativarBgTab(tabValue);
     default: 
       break;
+  }
+
+  if(mValue == "porAprovar") {
+    const tabAprovadas = document.querySelectorAll('#tab');
+
+    tabAprovadas.forEach(tab => {
+      tab.classList.toggle('is-active');
+    });
   }
 });
 

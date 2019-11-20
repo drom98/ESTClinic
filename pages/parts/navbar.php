@@ -4,8 +4,8 @@ if(!isset($_SESSION)) {
 	session_start();
 }
 
-if(file_exists('../backend/utils.php')) {
-	include_once '../backend/utils.php';
+if(file_exists('../../backend/utils.php')) {
+	include_once '../../backend/utils.php';
 }
 ?>
 

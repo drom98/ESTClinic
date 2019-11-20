@@ -28,7 +28,7 @@ function verificarTipoUtilizador($tipoUtilizador) {
   } else if ($tipoUtilizador == 4){
     header("Location: ../../pages/login.php?erro=aprovar");
   } else if ($tipoUtilizador == 5){
-    header("Location: ../../pages/utente.php");
+    header("Location: ../../pages/utente/utente.php");
   }
 }
 

@@ -30,6 +30,7 @@ $primary-invert: $pink-invert;
 @import "../node_modules/bulma/bulma";
 @import "checkbox.sass";
 @import "timetable.sass";
+@import "../node_modules/bulma-badge/dist/css/bulma-badge.sass";
 
 .bm--card-equal-height {
     height: 100%;

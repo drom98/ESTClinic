@@ -3,9 +3,11 @@
 include_once '../../backend/utils.php';
 include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
 
-
-
 ?>
+<div class="card">
+<!--<header class="card-header">
+  <p class="card-header-title">Utilizadores ativos</p>
+</header>-->
   <table class="table is-bordered is-striped is-hoverable is-fullwidth">
   <thead>
     <tr>
@@ -34,4 +36,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
   </tbody>
 </table>
   </div>
+    </div>
+    </div>
 

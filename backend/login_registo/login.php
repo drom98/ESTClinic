@@ -13,6 +13,7 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
       $row = queryUserPassword($conn, $nome, $password);
       if($row['tipoUtilizador'] != 4) {
         defineSessionVariables($row);
+        logLogin();
         verificarTipoUtilizador($row['tipoUtilizador']);
       } else {
         header("Location: ../../pages/login.php?erro=aprovar");  
@@ -37,19 +38,14 @@ function defineSessionVariables($row) {
   $_SESSION["password"] = $row["password"];
   $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
 }
-/*
-function verificarTipoUtilizador($row) {
-  if ($row == 1){
-    header("Location: ../../pages/admin/admin.php");
-  } else if ($row['tipoUtilizador'] == 2){
-    header("Location: ../../pages/medico.php");
-  } else if ($row['tipoUtilizador'] == 3){
-    header("Location: ../../pages/enfermeiro.php");
-  } else if ($row['tipoUtilizador'] == 4){
-    header("Location: ../../pages/login.php?erro=aprovar");
-  } else if ($row['tipoUtilizador'] == 5){
-    header("Location: ../../pages/utente.php");
-  }
+
+function logLogin() {
+  $flog = fopen('../../logs.txt', 'a') or die('Não encotrou ficheiro');
+  date_default_timezone_set('Europe/Lisbon');
+  $data = time();
+  $texto = ('Login: ' . date('d-m-Y H:i:s', $data) . ' ' . $_SESSION['nome']."\n");
+  fprintf($flog, $texto);
+  fclose($flog);
 }
-*/
+
 ?>

@@ -1,0 +1,14 @@
+Login: 25-11-2019 15:51:08 Diogo
+Logout: 25-11-2019 15:51:34 Diogo
+Login: 25-11-2019 15:52:09 Diogo
+Logout: 25-11-2019 15:52:27 Diogo
+Login: 25-11-2019 15:54:58 Diogo
+Logout: 25-11-2019 15:56:55 Diogo
+Login: 25-11-2019 15:58:13 Diogo
+Logout: 25-11-2019 16:02:54 Diogo
+Login: 25-11-2019 16:02:59 Susana Henriques
+Logout: 25-11-2019 16:03:05 Susana Henriques
+Login: 25-11-2019 16:04:38 Diogo
+Logout: 25-11-2019 16:04:42 Diogo
+Login: 25-11-2019 16:04:46 Susana Henriques
+Logout: 25-11-2019 16:04:50 Susana Henriques

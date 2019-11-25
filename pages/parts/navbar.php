@@ -4,9 +4,26 @@ if(!isset($_SESSION)) {
 	session_start();
 }
 
-if(file_exists('../../backend/utils.php')) {
-	include_once '../../backend/utils.php';
+function definirUrl() {
+	switch($_SESSION["tipoUtilizador"]) {
+		case "1":
+			echo(PAGES.'admin/admin.php');
+		break;
+		case "2":
+			echo(PAGES.'medico/medico.php');
+		break;
+		case "3":
+			echo(PAGES.'enfermeiro/enfermeiro.php');
+		break;
+		case "5":
+			echo(PAGES.'utente/utente.php');
+		break;
+		default:
+			echo(PAGES.'index.php');
+		break;
+	}
 }
+
 ?>
 
 <nav class="navbar is-link is-fixed-top" role="navigation">
@@ -23,7 +40,7 @@ if(file_exists('../../backend/utils.php')) {
 	  <div class="navbar-end">
 			<?php 
 			if(!verificarSessao()) { ?>
-				<a href=<?php echo(PAGES.'admin/admin.php') ?> class="navbar-item"><?php echo($_SESSION['nome']) ?><span class="icon" style="margin-left: 2px"><i class="fas fa-user-circle"></i></span></a>
+				<a href=<?php definirUrl() ?> class="navbar-item"><?php echo($_SESSION['nome']) ?><span class="icon" style="margin-left: 2px"><i class="fas fa-user-circle"></i></span></a>
 				<a href=<?php echo(BACKEND.'login_registo/logout.php') ?> class="navbar-item">Sair<span class="icon" style="margin-left: 3px"><i class="fas fa-sign-out-alt"></i></span></a> <?php
 			} else { ?>
 				<a href=<?php echo(PAGES.'login.php') ?> class="navbar-item">Iniciar Sessão<span class="icon" style="margin-left: 3px"><i class="fas fa-user-circle"></i></span></a>

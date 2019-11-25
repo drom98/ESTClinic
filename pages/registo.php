@@ -1,6 +1,8 @@
 <?php 
+
+require_once '../backend/utils.php';
+
 if(isset($_GET["erro"])) {
-  require_once '../backend/utils.php';
   echo "<script type='text/javascript' src='".JS."login.js'></script>";
 }
 ?>

@@ -3,7 +3,8 @@
 function queryUsersTable($conn) {
   $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador ORDER BY U.data";
   $retval = mysqli_query($conn, $sql);
-  if(mysqli_num_rows($retval) != 0) {
+  $num_rows = mysqli_num_rows($retval);
+  if($num_rows != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
       echo "
       <tr>
@@ -15,6 +16,7 @@ function queryUsersTable($conn) {
       <td>".mostrarBotoes($row['idUtilizador'])."</td>
       </tr>";
     }
+    //mostrarNumResultados($num_rows);
   } else {
     return false;
   }
@@ -151,5 +153,15 @@ function mostrarBotoes($userID) {
     break;
   }
 }
-
+/*
+function mostrarNumResultados($num) {
+  echo 
+  '
+  <header class="card-header">
+    <p class="card-header-title">Utilizadores ativos</p>
+    <p class="card-header-title is-pulled-right">'.$num.'</p>
+  </header>
+  ';
+}
+*/
 ?>

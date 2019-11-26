@@ -39,15 +39,13 @@ function verificarAdmin($tipoUtilizador) {
   <?php include_once 'parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
   <?php include_once '../parts/hero.php'; ?>
-  <div class="columns">
-    <div class="column is-one-quarter">
-      <div class="section">
+  <section class="section">
+    <div class="columns">
+      <div class="column is-one-quarter">
         <?php include_once 'parts/menu.html'; ?>
       </div>
-    </div>
     <div class="column">
-      <div class="container is-fluid">
-        <div class="section">
+      <div class="table-container">
         <?php 
           if(isset($_GET['tab'])) {
             require_once '../tabSwitch.php';
@@ -55,10 +53,11 @@ function verificarAdmin($tipoUtilizador) {
             tabSwitch($tab);
           }
         ?>
-        </div>
       </div>
     </div>
-  </div>
+    </div>
+  </section>
+
   <script src="../../lib/timetable.js"></script>
   <script src="../../lib/marcacoes.js"></script>
   <script src="../../lib/admin.js"></script>

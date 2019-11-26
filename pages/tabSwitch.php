@@ -14,6 +14,8 @@ function tabSwitch($tab) {
     case 'gerirMarcacoes':
       require_once 'admin/marcacoes/gerir-marcacoes.php';
     break;
+    case 'dadosPessoais':
+      require_once 'dados-pessoais.php';
     default:
       break;
   }

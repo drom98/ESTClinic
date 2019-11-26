@@ -37,6 +37,7 @@ function defineSessionVariables($row) {
   $_SESSION["email"] = $row["email"];
   $_SESSION["password"] = $row["password"];
   $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
+  $_SESSION["dataUtilizador"] = $row["data"];
 }
 
 function logLogin() {

@@ -1,7 +1,5 @@
 <?php 
 
-require_once '../backend/utils.php';
-
 if(isset($_GET["erro"])) {
   echo "<script type='text/javascript' src='".JS."login.js'></script>";
 }
@@ -20,33 +18,65 @@ if(isset($_GET["erro"])) {
   <?php 
   require_once 'parts/navbar.php';
   ?>
-    <section class="hero is-light is-fullheight-with-navbar">
-        <div class="hero-body" id="login-container">
-          <div class="container">
-          <div class="columns is-centered">
-                <div class="column is-half">
-                    <div class="card">
-                      <div class="card-content">
-                        <h1 class="title has-text-link is-4 has-text-centered">Iniciar sessão</h1>
-                        <h2 class="subtitle is-6 has-text-centered">Entre com a sua conta.</h2>
-                        <?php 
-                        require_once 'parts/message-permissao.html';
-                        require_once 'parts/message-aprovar.html';
-                        require_once 'parts/message-logout.html';
-                        ?>
-                        <?php 
-                        if(!verificarSessao()) {
-                          require_once 'parts/message_com_sessao.html';
-                        } else {
-                          require_once 'parts/login_form.html';
-                        }
-                        ?>
-                      </div>
-                    </div>
-                </div>
+    <section class="section">
+      <div class="columns">
+        <div class="column is-half">
+          <div class="card">
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <span class="icon" style="margin-bottom: 20px;"><i class="fas fa-user-circle fa-3x"></i></span>
+                <p class="has-text-weight-bold is-size-4 is-marginless"><?php echo($_SESSION["nome"]) ?></p>
+                <small>Utilizador desde: <?php echo(date( 'd/M/Y', strtotime($_SESSION['dataUtilizador']))) ?> </small>
+              </div>
             </div>
           </div>
         </div>
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <div class="card-header-title">
+                Editar detalhes
+              </div>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="field">
+                  <label class="label">Nome de utilizador:</label>
+                  <div class="control has-icons-left">
+                    <input name="userName" type="text" class="input" placeholder="Insira o seu nome de login..." required>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
+                </div>
+
+                <div class="field">
+                  <label class="label">Nome:</label>
+                  <div class="control has-icons-left">
+                    <input name="userName" type="text" class="input" placeholder="Insira o seu nome..." required>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
+                </div>
+
+                <div class="field">
+                  <label class="label">Email:</label>
+                  <div class="control has-icons-left">
+                    <input name="userName" type="email" class="input" placeholder="Insira o seu email..." required>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 </body>
 </html>

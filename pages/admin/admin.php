@@ -41,7 +41,7 @@ function verificarAdmin($tipoUtilizador) {
   <?php include_once '../parts/hero.php'; ?>
   <section class="section">
     <div class="columns">
-      <div class="column is-one-quarter">
+      <div class="column is-one-fifth">
         <?php include_once 'parts/menu.html'; ?>
       </div>
     <div class="column">
@@ -60,6 +60,6 @@ function verificarAdmin($tipoUtilizador) {
 
   <script src="../../lib/timetable.js"></script>
   <script src="../../lib/marcacoes.js"></script>
-  <script src="../../lib/admin.js"></script>
+  <script src="../../lib/menu.js"></script>
 </body>
 </html>

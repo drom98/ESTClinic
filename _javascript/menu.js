@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ativarBgTab(tabValue);
       break;
     case 'gerirMarcacoes':
-        ativarBgTab(tabValue);
+      ativarBgTab(tabValue);
+      break;
+    case 'dadosPessoais':
+      ativarBgTab(tabValue);
+      break;
     default: 
       break;
   }

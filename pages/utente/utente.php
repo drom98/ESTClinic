@@ -38,15 +38,13 @@ function verificarUtente($tipoUtilizador) {
 <body class="has-navbar-fixed-top">
   <?php require_once '../parts/navbar.php'; ?>
   <?php require_once '../parts/hero.php'; ?>
+  <section class="section">
   <div class="columns">
-    <div class="column is-one-quarter">
-      <div class="section">
+    <div class="column is-one-fifth">
         <?php include_once 'menu.html'; ?>
-      </div>
     </div>
     <div class="column">
       <div class="container is-fluid">
-        <div class="section">
         <?php 
           if(isset($_GET['tab'])) {
             require_once '../tabSwitch.php';
@@ -54,9 +52,11 @@ function verificarUtente($tipoUtilizador) {
             tabSwitch($tab);
           }
         ?>
-        </div>
       </div>
     </div>
   </div>
+  </section>
+
+  <script src="../../lib/menu.js"></script>
 </body>
 </html>

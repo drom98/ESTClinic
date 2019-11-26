@@ -12,3 +12,19 @@ Login: 25-11-2019 16:04:38 Diogo
 Logout: 25-11-2019 16:04:42 Diogo
 Login: 25-11-2019 16:04:46 Susana Henriques
 Logout: 25-11-2019 16:04:50 Susana Henriques
+Login: 25-11-2019 16:07:29 Susana Henriques
+Logout: 25-11-2019 16:15:14 Susana Henriques
+Login: 25-11-2019 16:15:17 Diogo
+Logout: 25-11-2019 16:15:20 Diogo
+Login: 25-11-2019 16:15:23 Susana Henriques
+Logout: 25-11-2019 16:18:40 Susana Henriques
+Login: 25-11-2019 16:18:45 Carlos Alves
+Logout: 25-11-2019 16:19:04 Carlos Alves
+Login: 25-11-2019 16:20:00 Susana Henriques
+Login: 25-11-2019 20:56:50 Susana Henriques
+Logout: 25-11-2019 21:06:46 Susana Henriques
+Login: 25-11-2019 21:06:55 Diogo
+Logout: 25-11-2019 21:55:37 Diogo
+Login: 26-11-2019 10:49:05 Diogo
+Logout: 26-11-2019 11:06:51 Diogo
+Login: 26-11-2019 11:07:07 Diogo

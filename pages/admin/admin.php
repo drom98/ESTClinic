@@ -36,17 +36,9 @@ function verificarAdmin($tipoUtilizador) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
-<?php include_once 'parts/modal.php'; ?>
+  <?php include_once 'parts/modal.php'; ?>
   <?php include_once '../parts/navbar.php'; ?>
-  <div class="hero is-link">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="is-size-4"><strong class="has-text-light">Bem vindo</strong>, <?php echo($_SESSION["nome"]) ?></h1>
-        <p class="subtitle is-size-6">Página de administrador.</p>
-      </div>
-    </div>
-  </div>
-  
+  <?php include_once '../parts/hero.php'; ?>
   <div class="columns">
     <div class="column is-one-quarter">
       <div class="section">

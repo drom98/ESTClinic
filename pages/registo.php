@@ -72,9 +72,9 @@ if(isset($_GET["erro"])) {
                             <p id="password" class="help is-danger is-hidden">Password errada.</p>
                         </div>
 
-                        <div class="field is-grouped">
+                        <div class="field">
                           <div class="control">
-                            <input type="submit" class="button is-link" value="Registar">
+                            <input type="submit" class="button is-link is-fullwidth" value="Registar">
                           </div>
                         </div>
                         </form>

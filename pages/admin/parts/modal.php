@@ -38,6 +38,16 @@
       </div>
 
       <div class="field">
+        <label class="label">Password:</label>
+        <div class="control has-icons-left">
+          <input name="password" type="password" class="input" placeholder="Insira a nova password..." required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
         <label class="label">Tipo de Utilizador:</label>
         <input class="is-checkradio is-warning" id="admin-radio" type="radio" name="tipoUser" value="1">
         <label for="admin-radio">Administrador</label>

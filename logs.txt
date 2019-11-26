@@ -52,3 +52,16 @@ Logout: 26-11-2019 15:05:19 Diogo
 Login: 26-11-2019 15:05:25 Susana Henriques
 Logout: 26-11-2019 15:35:56 Susana Henriques
 Login: 26-11-2019 15:36:00 Diogo
+Logout: 26-11-2019 15:49:50 Diogo
+Login: 26-11-2019 15:49:55 Susana Henriques
+Logout: 26-11-2019 15:50:12 Susana Henriques
+Login: 26-11-2019 15:50:16 Diogo
+Logout: 26-11-2019 16:06:01 Diogo
+Login: 26-11-2019 16:06:06 Carlos Alves
+Logout: 26-11-2019 16:06:26 Carlos Alves
+Login: 26-11-2019 16:06:29 Diogo
+Logout: 26-11-2019 16:19:19 Diogo
+Login: 26-11-2019 16:19:28 Diogo
+Logout: 26-11-2019 16:20:24 Diogo
+Login: 26-11-2019 16:20:28 Susana Henriques
+Logout: 26-11-2019 16:20:32 Susana Henriques

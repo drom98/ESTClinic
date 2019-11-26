@@ -149,6 +149,7 @@ let executarQuery = (id) => {
   const nomeLoginInput = document.querySelector('input[name="userName"]');
   const nomeInput = document.querySelector('input[name="nome"]');
   const emailInput = document.querySelector('input[name="email"]');
+  const passwordInput = document.querySelector('input[name="password"]');
   const tipoInput = document.querySelectorAll('input[name="tipoUser"]');
   fetch('../../backend/admin/query_editar_user.php?userid=' + id)
     .then(resposta => resposta.json())
@@ -156,7 +157,7 @@ let executarQuery = (id) => {
       console.log(data);
       setInputValues(data, modalTitleEl, nomeLoginInput, nomeInput, emailInput, tipoInput);
   });  
-  submeterAlteracoes(id, nomeLoginInput, nomeInput, emailInput, tipoInput);
+  submeterAlteracoes(id, nomeLoginInput, nomeInput, emailInput, passwordInput, tipoInput);
 }
 
 let setInputValues = (data, modal, login, nome, email, tipoUser) => {
@@ -182,14 +183,15 @@ let setInputValues = (data, modal, login, nome, email, tipoUser) => {
   }
 }
 
-let submeterAlteracoes = (id, login, nome, email, tipoUser) => {
+let submeterAlteracoes = (id, login, nome, email, password, tipoUser) => {
   const btnGuardarAlteracoes = document.querySelector('#btnGuardar');
   btnGuardarAlteracoes.addEventListener('click', () => {
     const dados = {
       idUtilizador: id,
       nomeUtilizador: login.value,
       nome: nome.value,
-      email: email.value
+      email: email.value,
+      password: password.value
     }
 
     tipoUser.forEach(element => {

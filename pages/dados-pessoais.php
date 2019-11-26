@@ -40,38 +40,52 @@ if(isset($_GET["erro"])) {
             </header>
             <div class="card-content">
               <div class="content">
-                <div class="field">
-                  <label class="label">Nome de utilizador:</label>
-                  <div class="control has-icons-left">
-                    <input name="userName" type="text" class="input" placeholder="Insira o seu nome de login..." required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-user"></i>
-                    </span>
+                <form action="">
+                  <div class="field">
+                    <label class="label">Nome de utilizador:</label>
+                    <div class="control has-icons-left">
+                      <input name="userName" type="text" class="input" value=<?php echo($_SESSION["nomeUtilizador"]) ?> placeholder="Insira o seu nome de login..." required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
                   </div>
-                  <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
-                </div>
 
-                <div class="field">
-                  <label class="label">Nome:</label>
-                  <div class="control has-icons-left">
-                    <input name="userName" type="text" class="input" placeholder="Insira o seu nome..." required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-user"></i>
-                    </span>
+                  <div class="field">
+                    <label class="label">Nome:</label>
+                    <div class="control has-icons-left">
+                      <input name="userName" type="text" class="input" value=<?php echo($_SESSION["nome"]) ?> placeholder="Insira o seu nome..." required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
                   </div>
-                  <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
-                </div>
 
-                <div class="field">
-                  <label class="label">Email:</label>
-                  <div class="control has-icons-left">
-                    <input name="userName" type="email" class="input" placeholder="Insira o seu email..." required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-envelope"></i>
-                    </span>
+                  <div class="field">
+                    <label class="label">Email:</label>
+                    <div class="control has-icons-left">
+                      <input name="userName" type="email" class="input" value=<?php echo($_SESSION["email"]) ?> placeholder="Insira o seu email..." required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                      </span>
+                    </div>
+                    <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
                   </div>
-                  <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
-                </div>
+
+                  <div class="field">
+                    <label class="label">Password:</label>
+                    <div class="control has-icons-left">
+                      <input name="userName" type="password" class="input" placeholder="Insira a sua nova password..." required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </div>
+                    <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
+                  </div>
+                  <input type="submit" class="button is-link is-fullwidth" value="Guardar alterações">
+                </form>
               </div>
             </div>
           </div>

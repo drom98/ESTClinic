@@ -32,4 +32,27 @@ function verificarTipoUtilizador($tipoUtilizador) {
   }
 }
 
+//Fetch dos dados do utilizador
+function fetchUserById($conn, $id) {
+  $sql = "SELECT * FROM utilizador WHERE idUtilizador = '$id'";
+  $retval = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+  if($row == NULL) {
+    return false;
+  } else {
+    return $row;
+  }
+}
+
+function fetchUserByNomeUtilizador($conn, $nomeUtilizador) {
+  $sql = "SELECT * FROM utilizador WHERE nomeUtilizador = '$nomeUtilizador'";
+  $retval = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+  if($row == NULL) {
+    return false;
+  } else {
+    return $row;
+  }
+}
+
 ?>

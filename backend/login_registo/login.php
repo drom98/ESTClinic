@@ -8,8 +8,10 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
   $nome = mysqli_real_escape_string($conn, $_POST['nome']);
   $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
   
-  if(queryNomeUser($conn, $nome)) {
-    if(queryUserPassword($conn, $nome, $password)) {
+  if(fetchUserByNomeUtilizador($conn, $nome)) {
+    $user = fetchUserByNomeUtilizador($conn, $nome);
+    $userPassword = $user["password"];
+    if($password == $userPassword) {
       $row = queryUserPassword($conn, $nome, $password);
       if($row['tipoUtilizador'] != 4) {
         defineSessionVariables($row);

@@ -32,6 +32,28 @@ function verificarTipoUtilizador($tipoUtilizador) {
   }
 }
 
+//Registar login e logout no ficheiro logs.txt
+function logLogin() {
+  $flog = fopen('../../logs.txt', 'a') or die('Não encotrou ficheiro');
+  date_default_timezone_set('Europe/Lisbon');
+  $data = time();
+  $texto = ('Login: ' . date('d-m-Y H:i:s', $data) . ' ' . $_SESSION['nome']."\n");
+  fprintf($flog, $texto);
+  fclose($flog);
+}
+
+//Definir as variáveis de sessão
+function defineSessionVariables($user) {
+  session_start();
+  $_SESSION["idUser"] = $user["idUtilizador"];
+  $_SESSION["nomeUtilizador"] = $user["nomeUtilizador"];
+  $_SESSION["nome"] = $user["nome"];
+  $_SESSION["email"] = $user["email"];
+  $_SESSION["password"] = $user["password"];
+  $_SESSION["tipoUtilizador"] = $user["tipoUtilizador"];
+  $_SESSION["dataUtilizador"] = $user["data"];
+}
+
 //Fetch dos dados do utilizador
 function fetchUserById($conn, $id) {
   $sql = "SELECT * FROM utilizador WHERE idUtilizador = '$id'";

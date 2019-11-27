@@ -10,25 +10,44 @@ if(!defined('ASSETS')) define("ASSETS", substr(dirname(__DIR__), strlen($_SERVER
 ##########################################################
 //Verificar sessão
 function verificarSessao() {
-  if(!isset($_SESSION["idUser"])) {
+  if(isset($_SESSION["idUser"])) {
     return true;
   } else {
     return false;
   }
 }
 
-//Verificar tipo de utilizador
+function verificarAdmin() {
+  if(isset($_SESSION['tipoUtilizador'])) {
+    if($_SESSION['tipoUtilizador'] == "1") {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+
 function verificarTipoUtilizador($tipoUtilizador) {
-  if ($tipoUtilizador == 1){
-    header("Location: ../../pages/admin/admin.php");
-  } else if ($tipoUtilizador == 2){
-    header("Location: ../../pages/medico.php");
-  } else if ($tipoUtilizador == 3){
-    header("Location: ../../pages/enfermeiro.php");
-  } else if ($tipoUtilizador == 4){
-    header("Location: ../../pages/login.php?erro=aprovar");
-  } else if ($tipoUtilizador == 5){
-    header("Location: ../../pages/utente/utente.php");
+  switch($tipoUtilizador) {
+    case '1':
+      header("Location: ../../pages/admin/admin.php");
+    break;
+    case '2':
+      header("Location: ../../pages/medico.php");
+    break;
+    case '3':
+      header("Location: ../../pages/enfermeiro.php");
+    break;
+    case '4':
+      header("Location: ../../pages/login.php?erro=aprovar");
+    break;
+    case '5':
+      header("Location: ../../pages/utente/utente.php");
+    break;
+    default:
+    break;
   }
 }
 

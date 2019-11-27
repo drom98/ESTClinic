@@ -39,7 +39,7 @@ function definirUrl() {
 	  </div>
 	  <div class="navbar-end">
 			<?php 
-			if(!verificarSessao()) { ?>
+			if(verificarSessao()) { ?>
 				<a href=<?php definirUrl() ?> class="navbar-item"><?php echo($_SESSION['nome']) ?><span class="icon" style="margin-left: 2px"><i class="fas fa-user-circle"></i></span></a>
 				<a href=<?php echo(BACKEND.'login_registo/logout.php') ?> class="navbar-item">Sair<span class="icon" style="margin-left: 3px"><i class="fas fa-sign-out-alt"></i></span></a> <?php
 			} else { ?>

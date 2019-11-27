@@ -7,21 +7,9 @@ if(!isset($_SESSION)) {
 include_once '../../backend/utils.php';
 
 //Proteger página
-if(isset($_SESSION['tipoUtilizador'])) {
-  if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
-    header('Location: ../login.php?erro=permissao');
-  }
-} else {
+if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
   header('Location: ../login.php?erro=permissao');
-}
-
-function verificarAdmin($tipoUtilizador) {
-  if($tipoUtilizador == "1") {
-    return true;
-  } else {
-    return false;
-  }
-}
+} 
 
 ?>
 

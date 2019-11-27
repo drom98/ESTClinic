@@ -35,7 +35,7 @@ if(isset($_GET["erro"])) {
                         require_once 'parts/message-logout.html';
                         ?>
                         <?php 
-                        if(!verificarSessao()) {
+                        if(verificarSessao()) {
                           require_once 'parts/message_com_sessao.html';
                         } else {
                           require_once 'parts/login_form.html';

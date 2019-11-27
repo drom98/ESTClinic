@@ -55,4 +55,11 @@ function fetchUserByNomeUtilizador($conn, $nomeUtilizador) {
   }
 }
 
+//Registar utilizadores
+function registarUser($nomeUser, $nome, $email, $password, $tipoUtilizador, $conn) {
+  $sql_query = "INSERT INTO utilizador (nomeUtilizador, nome, email, password, Data, tipoUtilizador) VALUES ('$nomeUser', '$nome', '$email', '$password', now(), '$tipoUtilizador')";
+  $result = mysqli_query($conn, $sql_query);
+  return $result;
+}
+
 ?>

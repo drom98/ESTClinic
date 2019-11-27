@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
     
-    if(!queryNomeUser($conn, $nome)) {
+    if(!fetchUserByNomeUtilizador($conn, $nome)) {
       if (registarUser($userName, $nome, $email, $password, '4', $conn)){
         header("Location: ../../pages/login.php?erro=aprovar");
        } else {
@@ -21,12 +21,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       //Username já existe
       header("Location: ../../pages/registo.php?erro=userName");
     }
-}
-
-function registarUser($nomeUser, $nome, $email, $password, $tipoUtilizador, $conn) {
-  $sql_query = "INSERT INTO utilizador (nomeUtilizador, nome, email, password, Data, tipoUtilizador) VALUES ('$nomeUser', '$nome', '$email', '$password', now(), '$tipoUtilizador')";
-  $result = mysqli_query($conn, $sql_query);
-  return $result;
 }
 
 ?>

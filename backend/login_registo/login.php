@@ -2,7 +2,6 @@
 
 include_once '../basedados.h';
 include_once '../utils.php';
-include($_SERVER['DOCUMENT_ROOT'].BACKEND.'login_registo/querys.php');
 
 if(isset($_POST["nome"]) && isset($_POST["password"])) {
   $nome = mysqli_real_escape_string($conn, $_POST['nome']);
@@ -12,11 +11,10 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
     $user = fetchUserByNomeUtilizador($conn, $nome);
     $userPassword = $user["password"];
     if($password == $userPassword) {
-      $row = queryUserPassword($conn, $nome, $password);
-      if($row['tipoUtilizador'] != 4) {
-        defineSessionVariables($row);
+      if($user["tipoUtilizador"] != 4) {
+        defineSessionVariables($user);
         logLogin();
-        verificarTipoUtilizador($row['tipoUtilizador']);
+        verificarTipoUtilizador($user["tipoUtilizador"]);
       } else {
         header("Location: ../../pages/login.php?erro=aprovar");  
       }
@@ -31,15 +29,15 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
 }
 
 //Funções
-function defineSessionVariables($row) {
+function defineSessionVariables($user) {
   session_start();
-  $_SESSION["idUser"] = $row["idUtilizador"];
-  $_SESSION["nomeUtilizador"] = $row["nomeUtilizador"];
-  $_SESSION["nome"] = $row["nome"];
-  $_SESSION["email"] = $row["email"];
-  $_SESSION["password"] = $row["password"];
-  $_SESSION["tipoUtilizador"] = $row["tipoUtilizador"];
-  $_SESSION["dataUtilizador"] = $row["data"];
+  $_SESSION["idUser"] = $user["idUtilizador"];
+  $_SESSION["nomeUtilizador"] = $user["nomeUtilizador"];
+  $_SESSION["nome"] = $user["nome"];
+  $_SESSION["email"] = $user["email"];
+  $_SESSION["password"] = $user["password"];
+  $_SESSION["tipoUtilizador"] = $user["tipoUtilizador"];
+  $_SESSION["dataUtilizador"] = $user["data"];
 }
 
 function logLogin() {

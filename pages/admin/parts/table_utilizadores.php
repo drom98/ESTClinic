@@ -1,7 +1,7 @@
 <?php 
 
-include_once '../../backend/utils.php';
 include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
+include_once '../../backend/utils.php';
 
 ?>
 <table class="table is-bordered is-striped is-hoverable is-fullwidth">
@@ -19,16 +19,85 @@ include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
       <?php 
       switch($_GET['tab']) {
         case 'utilizadores':
-          queryUsersTable($conn);
+          fetchTabelaUsersAtivos($conn);
         break;
         case 'usersPorAprovar':
-          queryUsersPorAprovar($conn);
+          fetchTabelaUsersPorAprovar($conn);
         break;
         case 'usersEliminados':
-          queryUsersEliminados($conn);
+          fetchTabelaUtilizadoresEliminados($conn);
         break;
       }
       ?>
   </tbody>
 </table>
+
+<?php 
+//Mostrar botões de cada tabela
+function mostrarBotoes($userID) {
+  if(isset($_GET["tab"])) {
+    $tab = $_GET["tab"];
+  }
+  switch($tab) {
+    case 'usersPorAprovar':
+      return '
+      <button class="button is-success is-light is-small is-fullwidth" id="btnAprovarUser" name="'.($userID).'">
+      <span class="icon">
+        <i class="fas fa-user-check"></i>
+      </span>
+      <span>Aprovar utilizador</span>
+    </button>
+      <button class="button is-link is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-user-edit"></i>
+        </span>
+        <span>Editar dados</span>
+      </button>
+      <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-trash"></i>
+        </span>
+        <span>Eliminar utilizador</span>
+      </button>';
+    break;
+    case 'usersEliminados':
+      return '
+      <button class="button is-success is-light is-small is-fullwidth" id="btnRestaurarUser" name="'.($userID).'">
+      <span class="icon">
+        <i class="fas fa-user-check"></i>
+      </span>
+      <span>Restaurar utilizador</span>
+    </button>
+      <button class="button is-link is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-user-edit"></i>
+        </span>
+        <span>Editar dados</span>
+      </button>
+      <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarPermaUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-trash"></i>
+        </span>
+        <span>Eliminar permanentemente</span>
+      </button>';
+    break;
+    case 'utilizadores':
+      return '
+      <button class="button is-link is-light is-small is-fullwidth" id="btnEditarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-user-edit"></i>
+        </span>
+        <span>Editar dados</span>
+      </button>
+      <button class="button is-danger is-light is-small is-fullwidth" id="btnApagarUser" name="'.($userID).'">
+        <span class="icon">
+          <i class="fas fa-trash"></i>
+        </span>
+        <span>Eliminar utilizador</span>
+      </button>';
+    break;
+  }
+}
+
+?>
 

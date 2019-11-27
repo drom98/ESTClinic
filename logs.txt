@@ -81,3 +81,6 @@ Login: 27-11-2019 19:08:03 Diogo
 Logout: 27-11-2019 19:08:06 Diogo
 Login: 27-11-2019 19:09:01 Susana Henriques
 Logout: 27-11-2019 19:09:09 Susana Henriques
+Login: 27-11-2019 19:23:42 Diogo
+Logout: 27-11-2019 19:27:08 Diogo
+Login: 27-11-2019 19:27:18 Diogo

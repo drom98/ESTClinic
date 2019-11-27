@@ -7,7 +7,7 @@ if(!defined('PAGES')) define("PAGES", substr(dirname(__DIR__), strlen($_SERVER['
 if(!defined('CSS'))define("CSS", substr(dirname(__DIR__), strlen($_SERVER['DOCUMENT_ROOT'])) . '/css/');
 if(!defined('ASSETS')) define("ASSETS", substr(dirname(__DIR__), strlen($_SERVER['DOCUMENT_ROOT'])) . '/assets/');
 
-
+##########################################################
 //Verificar sessão
 function verificarSessao() {
   if(!isset($_SESSION["idUser"])) {
@@ -32,6 +32,7 @@ function verificarTipoUtilizador($tipoUtilizador) {
   }
 }
 
+##########################################################
 //Registar login e logout no ficheiro logs.txt
 function logLogin() {
   $flog = fopen('../../logs.txt', 'a') or die('Não encotrou ficheiro');
@@ -53,7 +54,7 @@ function defineSessionVariables($user) {
   $_SESSION["tipoUtilizador"] = $user["tipoUtilizador"];
   $_SESSION["dataUtilizador"] = $user["data"];
 }
-
+##########################################################
 //Fetch dos dados do utilizador
 function fetchUserById($conn, $id) {
   $sql = "SELECT * FROM utilizador WHERE idUtilizador = '$id'";
@@ -82,6 +83,88 @@ function registarUser($nomeUser, $nome, $email, $password, $tipoUtilizador, $con
   $sql_query = "INSERT INTO utilizador (nomeUtilizador, nome, email, password, Data, tipoUtilizador) VALUES ('$nomeUser', '$nome', '$email', '$password', now(), '$tipoUtilizador')";
   $result = mysqli_query($conn, $sql_query);
   return $result;
+}
+
+##########################################################
+//Querys às tabelas
+
+//Fetch tabela utilizadores ativos
+function fetchTabelaUsersAtivos($conn) {
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador ORDER BY U.data";
+  $retval = mysqli_query($conn, $sql);
+  $num_rows = mysqli_num_rows($retval);
+  if($num_rows != 0) {
+    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "
+      <tr>
+      <td>".$row['nomeUtilizador']."</td>
+      <td>".$row['nome']."</td>
+      <td>".$row['email']."</td>
+      <td>".$row['descricao']."</td>
+      <td class='has-text-grey'>".date( 'd/M/Y', strtotime($row['data']))."</td>
+      <td>".mostrarBotoes($row['idUtilizador'])."</td>
+      </tr>";
+    }
+  } else {
+    return false;
+  }
+  mysqli_close($conn);
+}
+
+//Fetch tabela utilizadores por aprovar
+function fetchTabelaUsersPorAprovar($conn) {
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '4' AND T.idTipo = U.tipoUtilizador";
+  $retval = mysqli_query($conn, $sql);
+  if(mysqli_num_rows($retval) != 0) {
+    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "
+      <tr>
+      <td>".$row['idUtilizador']."</td>
+      <td>".$row['nomeUtilizador']."</td>
+      <td>".$row['nome']."</td>
+      <td>".$row['email']."</td>
+      <td>".$row['descricao']."</td>
+      <td>".mostrarBotoes($row['idUtilizador'])."</td>
+      </tr>";
+    }
+  } else {
+    echo "
+    <tr>
+    <td colspan='6' class='has-text-centered'>
+    Não foram encontrados registos nesta tabela.
+    </td>
+    </tr>
+    ";
+  }
+  mysqli_close($conn);
+}
+
+//fetch tabela utilizadores eliminados
+function fetchTabelaUtilizadoresEliminados($conn) {
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '6' AND T.idTipo = U.tipoUtilizador";
+  $retval = mysqli_query($conn, $sql);
+  if(mysqli_num_rows($retval) != 0) {
+    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "
+      <tr>
+      <td>".$row['idUtilizador']."</td>
+      <td>".$row['nomeUtilizador']."</td>
+      <td>".$row['nome']."</td>
+      <td>".$row['email']."</td>
+      <td>".$row['descricao']."</td>
+      <td>".mostrarBotoes($row['idUtilizador'])."</td>
+      </tr>";
+    }
+  } else {
+    echo "
+    <tr>
+    <td colspan='6' class='has-text-centered'>
+    Não foram encontrados registos nesta tabela.
+    </td>
+    </tr>
+    ";
+  }
+
 }
 
 ?>

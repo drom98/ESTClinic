@@ -5,7 +5,6 @@ if(!isset($_SESSION)) {
 }
 
 include_once '../../backend/utils.php';
-include_once '../../backend/admin/utilizadores/table_querys.php';
 
 //Proteger página
 if(isset($_SESSION['tipoUtilizador'])) {

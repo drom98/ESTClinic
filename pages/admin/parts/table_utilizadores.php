@@ -1,9 +1,20 @@
 <?php 
 
-include_once($_SERVER['DOCUMENT_ROOT'].BACKEND.'basedados.h');
+include_once '../../backend/basedados.h';
 include_once '../../backend/utils.php';
 
 ?>
+
+<div class="level has-background-light" style="padding: 15px; border-radius: 5px;">
+  <div class="level-left">
+    <div class="level-item">
+      <p class="subtitle is-size-5"><strong></strong> utilizadores</p>
+    </div>
+  </div>
+  <div class="level-right">
+    <button class="button is-link is-small">Adicionar</button>
+  </div>
+</div>
 <table class="table is-bordered is-striped is-hoverable is-fullwidth">
   <thead>
     <tr>

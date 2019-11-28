@@ -107,22 +107,25 @@ function registarUser($nomeUser, $nome, $email, $password, $tipoUtilizador, $con
 ##########################################################
 //Querys às tabelas
 
+function mostrarDadosTabela($row) {
+  echo "
+    <tr>
+    <td>".$row['nomeUtilizador']."</td>
+    <td>".$row['nome']."</td>
+    <td>".$row['email']."</td>
+    <td>".$row['descricao']."</td>
+    <td class='has-text-grey'>".date( 'd/M/Y', strtotime($row['data']))."</td>
+    <td>".mostrarBotoes($row['idUtilizador'])."</td>
+    </tr>";
+}
+
 //Fetch tabela utilizadores ativos
 function fetchTabelaUsersAtivos($conn) {
   $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador ORDER BY U.data";
   $retval = mysqli_query($conn, $sql);
-  $num_rows = mysqli_num_rows($retval);
-  if($num_rows != 0) {
+  if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-      echo "
-      <tr>
-      <td>".$row['nomeUtilizador']."</td>
-      <td>".$row['nome']."</td>
-      <td>".$row['email']."</td>
-      <td>".$row['descricao']."</td>
-      <td class='has-text-grey'>".date( 'd/M/Y', strtotime($row['data']))."</td>
-      <td>".mostrarBotoes($row['idUtilizador'])."</td>
-      </tr>";
+      mostrarDadosTabela($row); 
     }
   } else {
     return false;

@@ -92,3 +92,10 @@ Logout: 27-11-2019 19:45:32 Diogo
 Login: 27-11-2019 19:48:24 Susana Henriques
 Logout: 27-11-2019 19:48:27 Susana Henriques
 Login: 27-11-2019 19:48:30 Diogo
+Login: 27-11-2019 22:12:20 Diogo
+Logout: 28-11-2019 01:52:24 Diogo
+Login: 28-11-2019 02:28:48 Diogo
+Logout: 28-11-2019 02:29:54 Diogo
+Login: 28-11-2019 02:35:38 Diogo
+Logout: 28-11-2019 02:37:19 Diogo
+Login: 28-11-2019 13:35:40 Diogo

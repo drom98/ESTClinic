@@ -99,3 +99,10 @@ Logout: 28-11-2019 02:29:54 Diogo
 Login: 28-11-2019 02:35:38 Diogo
 Logout: 28-11-2019 02:37:19 Diogo
 Login: 28-11-2019 13:35:40 Diogo
+Logout: 28-11-2019 14:29:25 Diogo
+Login: 28-11-2019 14:29:35 David Folgado
+Logout: 28-11-2019 14:29:42 David Folgado
+Login: 28-11-2019 14:29:45 Diogo
+Login: 28-11-2019 14:30:04 David Folgado
+Login: 28-11-2019 14:30:50 David Folgado
+Logout: 28-11-2019 14:31:27 David Folgado

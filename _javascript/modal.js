@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   restaurarUtilizador();
 });
 
+//Fetch dados utilizador por ID
+let fetchUserByID = (id) => {
+  fetch('../../backend/admin/query_editar_user.php?userid=' + id)
+  .then(resposta => resposta.json())
+  .then(data => {
+    return data;
+  }); 
+}
+
 let restaurarUtilizador = () => {
   fecharModal();
 
@@ -17,11 +26,8 @@ let restaurarUtilizador = () => {
       const modalEl = document.querySelector('#modal-aprovar');
       const modalTitleEl = document.querySelectorAll('.modal-card-title');
       modalEl.classList.toggle('is-active');
-      fetch('../../backend/admin/query_editar_user.php?userid=' + btnRestaurarUser[i].name)
-      .then(resposta => resposta.json())
-      .then(data => {
-        modalTitleEl[2].innerHTML = `Pretende restaurar o utilizador: <strong> ${data.nome}</strong>?`;
-      }); 
+      data = fetchUserByID(btnRestaurarUser[i].name);
+      modalTitleEl[2].innerHTML = `Pretende restaurar o utilizador: <strong> ${data.nome}</strong>?`;
       btnConfirmar[1].addEventListener('click', () => {
         executarQueryAprovarUser(btnRestaurarUser[i].name);
       });
@@ -41,11 +47,8 @@ let aprovarUtilizador = () => {
       const modalEl = document.querySelector('#modal-aprovar');
       const modalTitleEl = document.querySelectorAll('.modal-card-title');
       modalEl.classList.toggle('is-active');
-      fetch('../../backend/admin/query_editar_user.php?userid=' + btnAprovarUser[i].name)
-      .then(resposta => resposta.json())
-      .then(data => {
-        modalTitleEl[2].innerHTML = `Pretende aprovar o utilizador: <strong> ${data.nome}</strong>?`;
-      }); 
+      data = fetchUserByID(btnAprovarUser[i].name);
+      modalTitleEl[2].innerHTML = `Pretende aprovar o utilizador: <strong> ${data.nome}</strong>?`;
       btnConfirmar[1].addEventListener('click', () => {
         executarQueryAprovarUser(btnAprovarUser[i].name);
       });
@@ -75,11 +78,8 @@ let eliminarPermanente = () => {
       const modalEl = document.querySelector('#modal-apagar');
       const modalTitleEl = document.querySelectorAll('.modal-card-title');
       modalEl.classList.toggle('is-active');
-      fetch('../../backend/admin/query_editar_user.php?userid=' + btnApagarPerma[i].name)
-      .then(resposta => resposta.json())
-      .then(data => {
-        modalTitleEl[1].innerHTML = `Apagar permanentemente o utilizador: <strong> ${data.nome}</strong>?`;
-      }); 
+      data = fetchUserByID(btnAprovarUser[i].name);
+      modalTitleEl[1].innerHTML = `Apagar permanentemente o utilizador: <strong> ${data.nome}</strong>?`;
       btnConfirmar.addEventListener('click', () => {
         executarQueryApagarPerma(btnApagarPerma[i].name);
       });
@@ -108,11 +108,8 @@ let eliminarUser = () => {
       const modalEl = document.querySelector('#modal-apagar');
       const modalTitleEl = document.querySelectorAll('.modal-card-title');
       modalEl.classList.toggle('is-active');
-      fetch('../../backend/admin/query_editar_user.php?userid=' + btnApagar[i].name)
-      .then(resposta => resposta.json())
-      .then(data => {
-        modalTitleEl[1].innerHTML = `Eliminar o utilizador: <strong> ${data.nome}</strong>?`;
-      }); 
+      data = fetchUserByID(btnAprovarUser[i].name);
+      modalTitleEl[1].innerHTML = `Eliminar o utilizador: <strong> ${data.nome}</strong>?`;
       btnConfirmar.addEventListener('click', () => {
         executarQueryApagar(btnApagar[i].name);
       });

@@ -49,14 +49,16 @@
 
       <div class="field">
         <label class="label">Tipo de Utilizador:</label>
-        <input class="is-checkradio is-warning" id="admin-radio" type="radio" name="tipoUser" value="1">
+        <input class="is-checkradio is-warning is-small" id="admin-radio" type="radio" name="tipoUser" value="1">
         <label for="admin-radio">Administrador</label>
-        <input class="is-checkradio is-link" id="medico-radio" type="radio" name="tipoUser" value="2">
+        <input class="is-checkradio is-link is-small" id="medico-radio" type="radio" name="tipoUser" value="2">
         <label for="medico-radio">Médico</label>
-        <input class="is-checkradio is-link" id="enf-radio" type="radio" name="tipoUser" value="3">
+        <input class="is-checkradio is-link is-small" id="enf-radio" type="radio" name="tipoUser" value="3">
         <label for="enf-radio">Enfermeiro</label>
-        <input class="is-checkradio is-link" id="utente-radio" type="radio" name="tipoUser" value="5">
+        <input class="is-checkradio is-link is-small" id="utente-radio" type="radio" name="tipoUser" value="5">
         <label for="utente-radio">Utente</label>
+        <input class="is-checkradio is-link is-small" id="nv-radio" type="radio" name="tipoUser" value="4">
+        <label for="nv-radio">Não verificado</label>
       </div>
     </section>
     <footer class="modal-card-foot">

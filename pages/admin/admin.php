@@ -23,13 +23,13 @@ if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
-  <?php include_once 'parts/modal.php'; ?>
-  <?php include_once '../parts/navbar.php'; ?>
-  <?php include_once '../parts/hero.php'; ?>
+  <?php include_once '../components/modal/modal.php'; ?>
+  <?php include_once '../includes/navbar.php'; ?>
+  <?php include_once '../includes/hero.php'; ?>
   <section class="section">
     <div class="columns">
       <div class="column is-one-fifth">
-        <?php include_once 'parts/menu.html'; ?>
+        <?php include_once '../components/menu-lateral/menu.html'; ?>
       </div>
     <div class="column">
       <div class="table-container">

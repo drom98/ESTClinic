@@ -3,16 +3,16 @@
 function tabSwitch($tab) {
   switch($tab) {
     case 'utilizadores':
-      require_once 'admin/parts/table_utilizadores.php';
+      require_once 'components/tabelas/table_utilizadores.php';
       break;
     case 'usersPorAprovar':
-      require_once 'admin/parts/table_utilizadores.php';
+      require_once 'components/tabelas/table_utilizadores.php';
       break;
     case 'usersEliminados':
-      require_once 'admin/parts/table_utilizadores.php';
+      require_once 'components/tabelas/table_utilizadores.php';
     break;
     case 'gerirMarcacoes':
-      require_once 'admin/marcacoes/gerir-marcacoes.php';
+      require_once '';
     break;
     case 'dadosPessoais':
       require_once 'dados-pessoais.php';

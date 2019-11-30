@@ -44,9 +44,7 @@ if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
     </div>
     </div>
   </section>
-
-  <script src="../../lib/timetable.js"></script>
-  <script src="../../lib/marcacoes.js"></script>
+  
   <script src="../../lib/menu.js"></script>
 </body>
 </html>

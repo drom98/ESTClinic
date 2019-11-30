@@ -14,9 +14,9 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
       if($user["tipoUtilizador"] != 4) {
         defineSessionVariables($user);
         logLogin();
-        verificarTipoUtilizador($user["tipoUtilizador"]);
+        headerTipoUtilizador($user["tipoUtilizador"]);
       } else {
-        header("Location: ../../pages/login.php?erro=aprovar");  
+        headerTipoUtilizador($user["tipoUtilizador"]);  
       }
     } else {
       //Password errada

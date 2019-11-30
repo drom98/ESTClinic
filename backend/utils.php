@@ -29,7 +29,7 @@ function verificarAdmin() {
   }
 }
 
-function verificarTipoUtilizador($tipoUtilizador) {
+function headerTipoUtilizador($tipoUtilizador) {
   switch($tipoUtilizador) {
     case '1':
       header("Location: ../../pages/admin/admin.php");
@@ -45,6 +45,9 @@ function verificarTipoUtilizador($tipoUtilizador) {
     break;
     case '5':
       header("Location: ../../pages/utente/utente.php");
+    break;
+    case '6':
+      header("Location: ../../pages/login.php?erro=eliminado");
     break;
     default:
     break;

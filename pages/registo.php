@@ -1,11 +1,4 @@
-<?php 
-
-require_once '../backend/utils.php';
-
-if(isset($_GET["erro"])) {
-  echo "<script type='text/javascript' src='".JS."login.js'></script>";
-}
-?>
+<?php require_once '../backend/utils.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +6,12 @@ if(isset($_GET["erro"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../dist/css/main.css">
   <title>ESTClinic - Registar</title>
 </head>
 <body class="has-navbar-fixed-top">
   <?php 
-  require_once 'parts/navbar.php';
+  require_once 'includes/navbar.php';
   ?>
     <section class="hero is-light is-fullheight-with-navbar">
         <div class="hero-body" id="login-container">
@@ -85,5 +78,7 @@ if(isset($_GET["erro"])) {
           </div>
         </div>
     </section>
+
+    <script src="../dist/js/main.js"></script>
 </body>
 </html>

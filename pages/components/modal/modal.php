@@ -95,5 +95,3 @@
     </footer>
   </div>
 </div>
-  
-<script src="../../lib/modal.js"></script>

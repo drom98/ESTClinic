@@ -19,7 +19,7 @@ if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href=<?php echo(CSS.'main.css') ?>>
+  <link rel="stylesheet" href="../../dist/css/main.css">
   <title>ESTClinic - Administrador</title>
 </head>
 <body class="has-navbar-fixed-top">
@@ -45,6 +45,6 @@ if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
     </div>
   </section>
   
-  <script src="../../lib/menu.js"></script>
+  <script src="../../dist/js/main.js"></script>
 </body>
 </html>

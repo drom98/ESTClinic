@@ -72,7 +72,7 @@ if(isset($_GET["erro"])) {
                     </div>
                     <p id="userName" class="help is-danger is-hidden">O nome que introduziu já existe.</p>
                   </div>
-                  <input type="submit" class="button is-link is-fullwidth" value="Guardar alterações">
+                  <input id="btn-dados-pessoais" type="submit" class="button is-link is-fullwidth" value="Guardar alterações">
                 </form>
               </div>
             </div>

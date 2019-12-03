@@ -29,7 +29,7 @@ if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
   <section class="section">
     <div class="columns">
       <div class="column is-one-fifth">
-        <?php include_once '../components/menu-lateral/menu.html'; ?>
+        <?php include_once '../components/menu-lateral/menu.php'; ?>
       </div>
     <div class="column">
       <div class="table-container">

@@ -155,16 +155,17 @@ let executarQuery = (id) => {
     .then(resposta => resposta.json())
     .then(data => {
       console.log(data);
-      setInputValues(data, modalTitleEl, nomeLoginInput, nomeInput, emailInput, tipoInput);
+      setInputValues(data, modalTitleEl, nomeLoginInput, nomeInput, emailInput, passwordInput, tipoInput);
   });  
   submeterAlteracoes(id, nomeLoginInput, nomeInput, emailInput, passwordInput, tipoInput);
 }
 
-let setInputValues = (data, modal, login, nome, email, tipoUser) => {
+let setInputValues = (data, modal, login, nome, email, password, tipoUser) => {
   modal.innerHTML = `Editar dados de: <strong> ${data.nome} </strong>`;
   login.value = data.nomeUtilizador;
   nome.value = data.nome;
   email.value = data.email;
+  password.value = data.password;
   switch(data.tipoUtilizador) {
     case "1":
       tipoUser[0].checked = true;
@@ -182,6 +183,15 @@ let setInputValues = (data, modal, login, nome, email, tipoUser) => {
       break;
   }
 }
+
+//Secção Dados pessoais
+let alterarDados = () => {
+  const btnGuardar = document.querySelector('#btn-dados-pessoais');
+  const dados = {
+    
+  }
+}
+
 
 let submeterAlteracoes = (id, login, nome, email, password, tipoUser) => {
   const btnGuardarAlteracoes = document.querySelector('#btnGuardar');
@@ -213,4 +223,35 @@ let submeterAlteracoes = (id, login, nome, email, password, tipoUser) => {
       })
       .catch(erro => console.log(erro)) 
   })
+}
+
+let fecharModal = () => {
+  const modalEl = document.querySelectorAll('.modal');
+  const bgEl = document.querySelectorAll('.modal-background');
+  const closeBtn = document.querySelectorAll('.delete');
+  const btnCancel = document.querySelectorAll('#btnCancel');
+
+  bgEl.forEach(el => {
+    el.addEventListener('click', () => {
+      modalEl.forEach((modal) => {
+        modal.classList.remove('is-active');
+      });
+    });
+  });
+
+  closeBtn.forEach(el => {
+    el.addEventListener('click', () => {
+      modalEl.forEach((modal) => {
+        modal.classList.remove('is-active');
+      });
+    });
+  });
+
+  btnCancel.forEach(el => {
+    el.addEventListener('click', () => {
+      modalEl.forEach((modal) => {
+        modal.classList.remove('is-active');
+      });
+    });
+  });
 }

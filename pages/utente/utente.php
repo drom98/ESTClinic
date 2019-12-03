@@ -5,7 +5,6 @@ if(!isset($_SESSION)) {
 }
 
 include_once '../../backend/utils.php';
-include_once '../../backend/admin/utilizadores/table_querys.php';
 
 //Proteger página
 if(isset($_SESSION['tipoUtilizador'])) {
@@ -32,16 +31,16 @@ function verificarUtente($tipoUtilizador) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href=<?php echo(CSS.'main.css') ?>>
+  <link rel="stylesheet" href="../../dist/css/main.css">
   <title>ESTClinic - Utente</title>
 </head>
 <body class="has-navbar-fixed-top">
-  <?php require_once '../parts/navbar.php'; ?>
-  <?php require_once '../parts/hero.php'; ?>
+  <?php require_once '../includes/navbar.php'; ?>
+  <?php require_once '../includes/hero.php'; ?>
   <section class="section">
   <div class="columns">
     <div class="column is-one-fifth">
-        <?php include_once 'menu.html'; ?>
+        <?php include_once '../components/menu-lateral/menu.php'; ?>
     </div>
     <div class="column">
       <div class="container is-fluid">
@@ -57,6 +56,6 @@ function verificarUtente($tipoUtilizador) {
   </div>
   </section>
 
-  <script src="../../lib/menu.js"></script>
+  <script src="../../dist/js/main.js"></script>
 </body>
 </html>

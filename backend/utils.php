@@ -142,15 +142,7 @@ function fetchTabelaUsersPorAprovar($conn) {
   $retval = mysqli_query($conn, $sql);
   if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-      echo "
-      <tr>
-      <td>".$row['idUtilizador']."</td>
-      <td>".$row['nomeUtilizador']."</td>
-      <td>".$row['nome']."</td>
-      <td>".$row['email']."</td>
-      <td>".$row['descricao']."</td>
-      <td>".mostrarBotoes($row['idUtilizador'])."</td>
-      </tr>";
+      mostrarDadosTabela($row);
     }
   } else {
     echo "
@@ -170,15 +162,7 @@ function fetchTabelaUtilizadoresEliminados($conn) {
   $retval = mysqli_query($conn, $sql);
   if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-      echo "
-      <tr>
-      <td>".$row['idUtilizador']."</td>
-      <td>".$row['nomeUtilizador']."</td>
-      <td>".$row['nome']."</td>
-      <td>".$row['email']."</td>
-      <td>".$row['descricao']."</td>
-      <td>".mostrarBotoes($row['idUtilizador'])."</td>
-      </tr>";
+      mostrarDadosTabela($row);
     }
   } else {
     echo "

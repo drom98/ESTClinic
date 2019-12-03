@@ -4,13 +4,19 @@ if(!isset($_SESSION)) {
   session_start();
 }
 
+include_once '../../classes/Autoload.class.php';
+$autoload = new Autoload();
+$bd = new Bd();
+$bd->connect();
+
+/*
 include_once '../../backend/utils.php';
 
 //Proteger página
 if(!verificarSessao() && !verificarAdmin($_SESSION['tipoUtilizador'])) {
   header('Location: ../login.php?erro=permissao');
 } 
-
+*/
 ?>
 
 <!DOCTYPE html>

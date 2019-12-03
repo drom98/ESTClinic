@@ -25,7 +25,6 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-
 gulp.task('build', gulp.series(['sass', 'babel']));
 
 gulp.task('watch', function() {

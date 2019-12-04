@@ -11,7 +11,7 @@ function tabSwitch($tab) {
     case 'usersEliminados':
       require_once 'components/tabelas/tabela_utilizadores.php';
     break;
-    case 'gerirMarcacoes':
+    case 'verConsultas':
       require_once 'components/tabelas/tabela_marcacoes.php';
     break;
     case 'aprovarMarcacoes':

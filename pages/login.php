@@ -29,6 +29,7 @@ require_once '../backend/utils.php';
                         require_once 'components/mensagens/message-permissao.html';
                         require_once 'components/mensagens/message-aprovar.html';
                         require_once 'components/mensagens/message-logout.html';
+                        require_once 'components/mensagens/message-eliminado.html';
                         ?>
                         <?php 
                         if(verificarSessao()) {

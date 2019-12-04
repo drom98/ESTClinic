@@ -12,9 +12,13 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
     $userPassword = $user["password"];
     if($password == $userPassword) {
       if($user["tipoUtilizador"] != 4) {
-        defineSessionVariables($user);
-        logLogin();
-        headerTipoUtilizador($user["tipoUtilizador"]);
+        if($user['tipoUtilizador'] == 6) {
+          headerTipoUtilizador($user["tipoUtilizador"]);  
+        } else {
+          defineSessionVariables($user);
+          logLogin();
+          headerTipoUtilizador($user["tipoUtilizador"]);
+        }
       } else {
         headerTipoUtilizador($user["tipoUtilizador"]);  
       }

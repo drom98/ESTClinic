@@ -124,7 +124,7 @@ function mostrarDadosTabela($row) {
 
 //Fetch tabela utilizadores ativos
 function fetchTabelaUsersAtivos($conn) {
-  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipo = U.tipoUtilizador ORDER BY U.data";
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador <> '4' AND tipoUtilizador <> '6' AND T.idTipoUtilizador = U.tipoUtilizador ORDER BY U.data";
   $retval = mysqli_query($conn, $sql);
   if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
@@ -138,7 +138,7 @@ function fetchTabelaUsersAtivos($conn) {
 
 //Fetch tabela utilizadores por aprovar
 function fetchTabelaUsersPorAprovar($conn) {
-  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '4' AND T.idTipo = U.tipoUtilizador";
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '4' AND T.idTipoUtilizador = U.tipoUtilizador";
   $retval = mysqli_query($conn, $sql);
   if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
@@ -158,7 +158,7 @@ function fetchTabelaUsersPorAprovar($conn) {
 
 //fetch tabela utilizadores eliminados
 function fetchTabelaUtilizadoresEliminados($conn) {
-  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '6' AND T.idTipo = U.tipoUtilizador";
+  $sql = "SELECT U.*, T.descricao FROM utilizador U, tipoUtilizador T WHERE tipoUtilizador = '6' AND T.idTipoUtilizador = U.tipoUtilizador";
   $retval = mysqli_query($conn, $sql);
   if(mysqli_num_rows($retval) != 0) {
     while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {

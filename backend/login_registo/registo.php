@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
     
-    if(!fetchUserByNomeUtilizador($conn, $nome)) {
+    if(!fetchUserByNomeUtilizador($conn, $userName)) {
       if (registarUser($userName, $nome, $email, $password, '4', $conn)){
         header("Location: ../../pages/login.php?erro=aprovar");
        } else {

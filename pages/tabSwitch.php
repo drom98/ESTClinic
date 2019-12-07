@@ -17,6 +17,9 @@ function tabSwitch($tab) {
     case 'aprovarMarcacoes':
       require_once '';
     break;
+    case 'marcarConsulta':
+      require_once 'components/formularios/marcar-consulta.php';
+    break;
     case 'dadosPessoais':
       require_once 'dados-pessoais.php';
     default:

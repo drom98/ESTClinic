@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'dadosPessoais':
       ativarBgTab(tabValue);
       break;
+    case 'marcarConsulta':
+      ativarBgTab(tabValue);
+      break;
     default: 
       break;
   }

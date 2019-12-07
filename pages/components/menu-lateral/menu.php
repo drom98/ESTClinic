@@ -80,7 +80,7 @@ function menuUtente() {
     Consultas
   </p>
   <ul class="menu-list">
-    <li><a href="?tab=marcarConsulta" id="utilizadores">Marcar consulta</a></li>
+    <li><a href="?tab=marcarConsulta" id="marcarConsulta">Marcar consulta</a></li>
     <li><a href="?tab=verConsultas" id="utilizadores">Ver consultas marcadas</a></li>
   </ul>
 

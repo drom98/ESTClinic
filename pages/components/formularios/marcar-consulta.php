@@ -17,7 +17,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field is-hidden">
           <label class="label">Tipo de tratamento:</label>
           <div class="control">
             <div class="select">
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field is-hidden">
           <label class="label">Tipo de consulta:</label>
           <div class="control">
             <div class="select">
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field is-hidden">
           <label class="label">Enfermeiro:</label>
           <div class="control">
             <div class="select">
@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field is-hidden">
           <label class="label">Médico:</label>
           <div class="control">
             <div class="select">

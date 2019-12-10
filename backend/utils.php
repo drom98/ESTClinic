@@ -55,14 +55,18 @@ function headerTipoUtilizador($tipoUtilizador) {
 }
 
 ##########################################################
-//Registar login e logout no ficheiro logs.txt
+//Registar login e logout no ficheiro log.txt
 function logLogin() {
-  $flog = fopen('../../logs.txt', 'a') or die('Não encotrou ficheiro');
+  if(file_exists('../../log.txt')) {
+    $ficheiro = fopen('../../log.txt', 'a') or die('fopen a');
+  } else {
+    $ficheiro = fopen('../../log.txt', 'w+') or die('fopen w+');
+  }
   date_default_timezone_set('Europe/Lisbon');
   $data = time();
   $texto = ('Login: ' . date('d-m-Y H:i:s', $data) . ' ' . $_SESSION['nome']."\n");
-  fprintf($flog, $texto);
-  fclose($flog);
+  fprintf($ficheiro, $texto);
+  fclose($ficheiro);
 }
 
 //Definir as variáveis de sessão

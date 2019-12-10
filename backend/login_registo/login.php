@@ -16,7 +16,7 @@ if(isset($_POST["nome"]) && isset($_POST["password"])) {
           headerTipoUtilizador($user["tipoUtilizador"]);  
         } else {
           defineSessionVariables($user);
-          logLogin();
+          //logLogin();
           headerTipoUtilizador($user["tipoUtilizador"]);
         }
       } else {

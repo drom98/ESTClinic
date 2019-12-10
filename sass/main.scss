@@ -31,6 +31,10 @@ $primary-invert: $pink-invert;
 @import "checkbox.sass";
 @import "../node_modules/bulma-badge/dist/css/bulma-badge.sass";
 
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .bm--card-equal-height {
     height: 100%;
 }
